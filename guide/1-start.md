@@ -24,4 +24,4 @@ Deberian ver algo similar a lo siguiente:
 
 ![Start](https://cloudup.com/ci238hBeemc+)
 
-[Continuemos!](2-layout.md)
+[Continuemos haciendo el Layout!](2-layout.md)
