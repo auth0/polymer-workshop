@@ -1,0 +1,52 @@
+<link rel="import" href="../components/polymer/polymer.html">
+<link rel="import" href="../components/paper-toggle-button/paper-toggle-button.html">
+
+<polymer-element name="task-card">
+  <template>
+    <style>
+    :host {
+      display: block;
+      position: relative;
+      background-color: white;
+      padding: 20px;
+      width: 100%;
+      font-size: 1.2rem;
+      font-weight: 300;
+    }
+
+    .card-header {
+      margin-bottom: 10px;
+    }
+    .card-header ::content h2 {
+      margin: 0;
+      font-size: 1.8rem;
+      font-weight: 300;
+    }
+
+    paper-toggle-button {
+      position: absolute;
+      top: 30px;
+      right: 3px;
+      color: #636363;
+    }
+    </style>
+
+    <div class="card-header">
+      <content select="h2"></content>
+    </div>
+
+    <paper-toggle-button
+      id="procastinateBtn"
+      checked="{{procastinated}}"></paper-toggle-button>
+
+    <content></content>
+
+  </template>
+  <script>
+  Polymer({
+    publish: {
+      procastinated: false
+    }
+  });
+  </script>
+</polymer-element>

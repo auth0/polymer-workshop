@@ -1,5 +1,6 @@
 <link rel="import" href="../components/polymer/polymer.html">
 <link rel="import" href="../task-service/task-service.html">
+<link rel="import" href="./task-card.html">
 
 <polymer-element name="task-list">
   <template>
@@ -13,7 +14,18 @@
     }
     </style>
 
-    <!-- Content goes here -->
+    <task-service id="service" tasks="{{tasks}}"></task-service>
+
+    <div layout vertical center>
+
+      <template repeat="{{task in tasks}}">
+        <task-card>
+          <h2>{{task.name}}</h2>
+          <p>{{task.description}}</p>
+        </task-card>
+      </template>
+
+    </div>
 
   </template>
   <script>

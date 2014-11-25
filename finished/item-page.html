@@ -1,0 +1,58 @@
+<link rel="import" href="../components/polymer/polymer.html">
+<link rel="import"
+    href="../components/core-header-panel/core-header-panel.html">
+<link rel="import"
+    href="../task-service/task-service.html">
+<link rel="import"
+    href="../components/core-toolbar/core-toolbar.html">
+
+<polymer-element name="item-page" attributes="uid">
+  <template fullbleed layout vertical>
+    <style>
+    core-header-panel {
+      height: 100%;
+      overflow: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    core-toolbar {
+      background: #03a9f4;
+      color: white;
+    }
+
+    .container {
+      width: 80%;
+      margin: 50px auto;
+    }
+    @media (min-width: 481px) {
+      .container {
+        width: 400px;
+      }
+    }
+    </style>
+
+    <task-service id="service" uid="{{uid}}" task="{{task}}"></task-service>
+
+    <core-header-panel flex>
+
+      <core-toolbar layout horizontal center>
+        <a href="#" on-click="{{back}}"><h2>Go back</h2></a>
+        <h2 flex>{{task.name}}</h2>
+      </core-toolbar>
+
+      <div class="container" layout vertical center>
+        <p>{{task.description}}</p>
+      </div>
+
+    </core-header-panel>
+
+
+  </template>
+  <script>
+  Polymer({
+    back: function(ev) {
+      ev.returnValue = false;
+      document.querySelector('app-router').go('/home');
+    }
+  });
+  </script>
+</polymer-element>

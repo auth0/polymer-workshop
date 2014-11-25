@@ -1,0 +1,36 @@
+<link rel="import" href="../components/polymer/polymer.html">
+<link rel="import" href="../task-service/task-service.html">
+<link rel="import" href="./task-card.html">
+
+<polymer-element name="task-list" attributes="show">
+  <template>
+    <style>
+    :host {
+      display: block;
+      width: 100%;
+    }
+    task-card {
+      margin-bottom: 30px;
+    }
+    </style>
+
+    <task-service id="service" tasks="{{tasks}}"></task-service>
+
+    <div layout vertical center>
+
+      <template repeat="{{task in tasks}}">
+        <task-card
+          procastinated="{{task.procastinated}}"
+          hidden?="{{show == 'procastinated' && !task.procastinated}}">
+          <h2>{{task.name}}</h2>
+          <p>{{task.description}}</p>
+        </task-card>
+      </template>
+
+    </div>
+
+  </template>
+  <script>
+  Polymer({});
+  </script>
+</polymer-element>

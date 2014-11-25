@@ -11,9 +11,9 @@
   <script src="../components/webcomponentsjs/webcomponents.js">
   </script>
 
-  <link rel="import" href="../components/app-router/app-router.html">
-
   <link rel="import" href="../components/font-roboto/roboto.html">
+
+  <link rel="import" href="../components/app-router/app-router.html">
 
   <style type="text/css">
     html,body {
@@ -31,8 +31,7 @@
   <app-router>
 
     <app-route path="/home" import="./home-page.html"></app-route>
-
-    <!-- New routes go here -->
+    <app-route path="/item/:uid" import="./item-page.html"></app-route>
 
     <app-route path="*" redirect="/home"></app-route>
 

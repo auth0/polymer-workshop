@@ -13,9 +13,21 @@
       font-size: 1.2rem;
       font-weight: 300;
     }
+
+    .card-header {
+      margin-bottom: 10px;
+    }
+    .card-header ::content h2 {
+      margin: 0;
+      font-size: 1.8rem;
+      font-weight: 300;
+    }
     </style>
 
-    <!-- Content goes here -->
+    <div class="card-header">
+      <content select="h2"></content>
+    </div>
+    <content></content>
 
   </template>
   <script>
