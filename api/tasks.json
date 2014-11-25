@@ -1,0 +1,32 @@
+[
+  {
+    "uid": 1,
+    "name" : "Buy the milk",
+    "description" : "Go to the supermarket and buy some milk",
+    "procastinated": true
+  },
+  {
+    "uid": 2,
+    "name" : "Go to JSConfAR",
+    "description" : "Get your ass up and go to the JSConfAR",
+    "procastinated": false
+  },
+  {
+    "uid": 3,
+    "name" : "Excercise",
+    "description" : "Time to move your body!",
+    "procastinated": true
+  },
+  {
+    "uid": 4,
+    "name" : "Eat",
+    "description" : "Before Sleep, Rave & Repeat you gotta eat!",
+    "procastinated": false
+  },
+  {
+    "uid": 5,
+    "name" : "Work",
+    "description" : "Wanna get money? Work!",
+    "procastinated": true
+  }
+]

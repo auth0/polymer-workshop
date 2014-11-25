@@ -1,0 +1,91 @@
+re<link rel="import" href="../components/polymer/polymer.html">
+<link rel="import" href="../components/core-ajax/core-ajax.html">
+<!--
+  `<task-service>` provides an API for a fake service, which
+    returns the tasks to procastinate.
+
+  Provides a very simple API: `tasks` returns the list of tasks.
+  `setIsProcastinated` pretends to persist what the user chose to setIsProcastinated.
+
+  @element task-service
+  @demo
+-->
+
+<!--
+  An array of tasks objects, with the following format:
+
+  <table border="0">
+    <tr>
+      <td><code>uid</code></td>
+      <td>Number</td>
+      <td>Unique ID for this post.</td>
+    </tr>
+     <tr>
+      <td><code>name</code></td>
+      <td>String</td>
+      <td>Name of the task.</td>
+    </tr>
+    <tr>
+      <td><code>description</code></td>
+      <td>String</td>
+      <td>Description of the task.</td>
+    </tr>
+    <tr>
+      <td><code>procastinated</code></td>
+      <td>Boolean</td>
+      <td>True if the task has been procastinated.</td>
+    </tr>
+  </table>
+
+  @attribute posts
+  @type Array
+  @default []
+-->
+<polymer-element name="task-service" attributes="tasks task uid">
+  <template>
+    <style>
+    :host {
+      display: none;
+    }
+    </style>
+    <core-ajax id="ajax"
+      auto
+      url="../api/tasks.json"
+      on-core-response="{{tasksLoaded}}"
+      handleAs="json">
+    </core-ajax>
+  </template>
+  <script>
+  Polymer('task-service', {
+    created: function() {
+      this.tasks = [];
+    },
+    tasksLoaded: function() {
+      // Make a copy of the loaded data
+      this.tasks = this.$.ajax.response.slice(0);
+      if (this.uid) {
+        var _this = this;
+        this.tasks.forEach(function(task) {
+          if (_this.uid == task.uid) {
+            _this.task = task;
+          }
+        });
+      }
+    },
+    /**
+     * Update the service with the current procastinated task.
+     * (Two-way data binding updates the procastinated value
+     * stored locally.) If this was a real service, this
+     * method would do something useful.
+     *
+     * @method setIsProcastinated
+     * @param uid {Number} Unique ID for post.
+     * @param isProcastinated {Boolean} True if the user marked this task as procastinated.
+     */
+    setIsProcastinated: function(uid, isProcastinated) {
+      // no service backend, just log the change
+      console.log('Procastinated changed: ' + uid + ", now: " + isProcastinated);
+    }
+  });
+  </script>
+</polymer-element>
