@@ -120,7 +120,7 @@ core-toolbar {
 
 Ahora nuestros tabs deberian ser mucho mas lindos:
 
-![tabs](https://cloudup.com/ck4hF90JoZZ)
+![tabs](https://cloudup.com/ck4hF90JoZZ+)
 
 Ya con esto tenemos terminado nuestro Layout principal de la aplicacion, pasemos al [proximo paso donde crearemos nuestra task card](3-create-first-element.md)
 
