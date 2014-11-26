@@ -6,6 +6,8 @@ Lo que vamos a construir es una Procastination List. Es muy similar a una TODO L
 
 La idea es tener 2 tabs. Uno con todas las tareas a realizar y otro con las tareas ya procastinadas. Cada tarea tendra un switch que nos permitira procastinarlas.
 
+Para empezar con la guia, [por favor hacer click aca](guide/1-start.md)
+
 ![imagen](https://cloudup.com/cj2OstSLTIc+)
 
-Para empezar, por favor hacer click [aca](guide/1-start.md)
+
