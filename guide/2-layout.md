@@ -54,13 +54,14 @@ Abramos ahora el archivo `home-page.html`:
 </polymer-element>
 ````
 
-> Como vemos aqui, la `home-page` tambien es un WebComponent. No obstante, explicaremos mas acerca de como crearlos en el siguiente paso. 
-
-En este componente, vamos a estar utilizando `<core-header-panel>`, `<core-toolbar>` y `<paper-tabs>` para realizar el Layout.  
+Este componente representa a la pagina Home. Vamos a estar utilizando `<core-header-panel>`, `<core-toolbar>` y `<paper-tabs>` para realizar el Layout de esta pagina.
 
 **Tarea: Incluir estos WebComponents que vamos a utilizar**. 
 
+
 > **Tip:** Estos WebComponent se importan muy similar a Polymer y ya estan bajados en la carpeta `component`
+
+> **Nota:** Como vemos aqui, la `home-page` es un WebComponent. No obstante, explicaremos mas acerca de como crearlos en el siguiente paso. 
 
 ### Haciendo el Layout
 
@@ -72,29 +73,31 @@ Ahora que ya tenemos importados los elementos que vamos a usar es hora de hacer 
 
 Para que el `<core-header-panel>` se vea, es necesario settearle un height explicito. Una forma facil de hacer esto es mediante los [layout attributes](https://www.polymer-project.org/docs/polymer/layout-attrs.html), los cuales se basan en [Flexbox](http://css-tricks.com/snippets/css/a-guide-to-flexbox/).
 
-**Tarea: Al `<template>` tag le tenemos que especificar que queremos un layout vertical que ocupe todo el viewport. Luego, al `<core-header-panel>` le tenemos que settear que va a controlar su propio tamaño usando Flexbo**
+**Tarea: Al `<template>` tag le tenemos que especificar que queremos un layout vertical que ocupe todo el viewport. Luego, al `<core-header-panel>` le tenemos que settear que va a controlar su propio tamaño usando Flexbox**
 
 > **Tip:** Todas las propiedades que tenemos que usar se encuentran en la [documentaction de layouts](https://www.polymer-project.org/docs/polymer/layout-attrs.html)
 
-Ahora ya se deberia ver nuestro Header y nuestro Content:
+Ahora ya se deberia ver nuestro Header y nuestro Content diferenciados:
 
 ![Content](https://cloudup.com/ctJlNFQtuls+)
 
 ### Agregando los tabs
 
-Ya tenemos ahora nuestro Layout principal. Lo que vamos a hacer ahora es agregar 2 tabs a nuestra toolbar. Uno con todas las tareas a realizar (All) y otro con las tareas que ya procastinamos (Procastinated).
+Ya tenemos ahora nuestro Layout principal finalizado. Lo que vamos a hacer ahora es agregar 2 tabs a nuestra toolbar. Uno con todas las tareas a realizar (All) y otro con las tareas que ya procastinamos (Procastinated).
 
 Para eso, vamos a usar los [`<paper-tabs>`](https://www.polymer-project.org/docs/elements/paper-elements.html#paper-tabs). 
 
-**Entonces vamos a crear 2 tabs. Uno deberia decir `all` y el otro `procastinated`**. 
+**Tarea: Crear 2 tabs. El primero deberia decir `all` y el otro `procastinated`**. 
 
-> **Tip:** La implementacion es igual a la de la [documentacion](https://www.polymer-project.org/docs/elements/paper-elements.html#paper-tabs), la unica diferencia es que nosotros para identificar a cada tab vamos a usar la property `name` en vez del indice y `selected` va a apuntar al `name` del primer tab.
+> **Tip:** La implementacion es igual a la de la [documentacion](https://www.polymer-project.org/docs/elements/paper-elements.html#paper-tabs), la unica diferencia es que nosotros para identificar a cada tab vamos a usar la property `name` en vez del indice y `selected` va a apuntar al `name` del primer tab por defecto.
 
 Se deberian ver asi:
 
 ![image](https://cloudup.com/cyM7EWHgwNU+)
 
-Vamos a ver que los tabs no se expanden al width total de la barra. Para eso tenemos que indicar que los hijos van a controlar su propio espacio y se van a expandir al espacio que les da el padre usando Flexbox. A su vez, tambien queremos que los labels se alinien al final del container
+Como vemos en la imagen, los tabs no se expanden al width total de la toolbar. Vamos a arreglar eso!
+
+**Tarea: Indicar en `<paper-tabs>` que este elemento va a controlar su propio espacio y se va a expandir a todo el espacio provisto por el padre usando Flexbox.. A su vez, tambien debemos indicar que se va a alinear al final del container.**
 
 > **Tip:** Ambas properties a usar se encuentra en la documentacion de [layout](https://www.polymer-project.org/docs/polymer/layout-attrs.html) y una la usamos en un ejercicio anterior
 
