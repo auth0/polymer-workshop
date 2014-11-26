@@ -8,7 +8,7 @@ Para eso, nosotros ya hemos creado un servicio llamado `<task-service>`. Este se
 
 Lo primero que vamos a hacer es agregar el servicio a nuestra `<task-list>`.
 
-**Tarea: Hacer un import al `<task-service>` y luego usarlo de la siguiente manera**
+**Tarea: Hacer un import al `<task-service>` y luego usarlo de la siguiente manera:**
 
 ````html
 <task-service id="service" tasks="{{tasks}}"></task-service>
@@ -40,11 +40,11 @@ El `repeat` itera por la lista de tareas. Cada tarea dentro de la lista es asign
 
 Lo unico que nos resta hacer ahora es incluir el `<task-list>` en nuestro `home-page.html` y mostrarlo como parte del contenido.
 
-**Tarea: Importar el `<task-list>` en nuestro home y usarlo dentro del `<div class="container">`**
+**Tarea: Importar el `<task-list>` en nuestro home y usarlo dentro del `<div class="container">`. Pongamosle de `id` `list` al `<task-list>`**
 
 Ahora, deberiamos ver el siguiente listado de tareas
 
 ![result](https://cloudup.com/cG15DAWYgXr+)
 
-[Ahora continuemos agregando una forma de poder procastinar las tareas](5-procastinating-tasks.md).
+[Continuemos agregando una forma de poder procastinar las tareas](5-procastinating-tasks.md).
 
