@@ -5,13 +5,11 @@ Ya podemos ver el listado de tareas. No obstante, aun hay 2 cosas que debemos ca
 1. Necesitamos una forma de procastinar las tareas
 1. El listado de tareas es el mismo tanto en el tab `All` como en el `Procastinated`. La idea es que el tab `Procastinated` tenga solamente las tareas Procastinadas.
 
-Hagamoslo!
-
-## Agregando el toggle de tarea procastinada
+## Agregando el toggle para procastinar tareas
 
 Lo primero que vamos a hacer es agregar un toggle que permita Procastinar una tarea en la `<task-card>`. 
 
-Para esto, necesitamos poder decirle a la `<task-card>` si la tarea esta procastinada o no y necesitamos poder cambiar el estado de procastinacion de la tarea desde la `<task-card>`. En otras palabras, lo que necesitamos es crear un binding entre la `<task-card>` y `task.procastinated`. Para eso, vamos a usar [published properties](https://www.polymer-project.org/docs/polymer/polymer.html#published-properties).
+Para esto, necesitamos poder decirle a la `<task-card>` si la tarea esta procastinada o no y necesitamos poder cambiar el estado de procastinacion de la tarea desde la `<task-card>`. En otras palabras, lo que necesitamos es crear un _2 way binding_ entre la `<task-card>` y `task.procastinated`. Para eso, vamos a usar [published properties](https://www.polymer-project.org/docs/polymer/polymer.html#published-properties).
 
 **Tarea: Publicar la propiedad `procastinated` desde `<task-card>`**
 
@@ -19,7 +17,7 @@ Para esto, necesitamos poder decirle a la `<task-card>` si la tarea esta procast
 
 Una vez publicada la propiedad, podremos acceder a la misma desde el JS via `this.procastinated` o desde el HTML via un binding `{{procastinated}}`.
 
-Ahora ya podemos agregar el toggle que cambiara el valor de `task.procastinated` usando `<paper-toggle-button>`.
+Ahora ya podemos agregar el `<paper-toggle-button>` que cambiara el valor de `task.procastinated` cuando es clickeado.
 
 **Tarea: Insertar el toggle donde se especifica a continuacion y bindear el atributo `checked` del toggle a la propiedad `procastinated` que nuestro WebComponent esta recibido por parametro.**
 
