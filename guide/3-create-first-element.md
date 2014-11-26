@@ -58,9 +58,10 @@ Por ultimo, en la parte de `<script>`, podemos ver que estamos llamando a `Polym
 
 Es hora de crear nuestro template! 
 
-Como vimos en la imagen al principio, la idea es tener un header con el titulo de la tarea y luego la descripcion abajo mas pequeña. Para eso, vamos a usar algo que se llama __Insertion points__. Un __Insertion point__ le dice al browser en que lugar de nuestro WebComponent se va a insertar el contenido adicional que fue añadido desde afuera. Si no ponemos ningun insertion point y usamos un WebComponent como `<task-card><h3>Hola</h3></task-card>`, el contenido del H3 nunca sera mostrado por el browser.Estos insertion points se crean con el tag `<content>`.
+Como vimos en la imagen al principio, la idea es tener un header con el titulo de la tarea y luego la descripcion abajo mas pequeña. Para eso, vamos a usar algo que se llama _Insertion points_. Un _Insertion point_ le dice al browser en que lugar de nuestro WebComponent se va a insertar el contenido adicional que fue añadido desde afuera. Si no ponemos ningun insertion point y usamos un WebComponent como `<task-card><h3>Hola</h3></task-card>`, el contenido del H3 nunca sera mostrado por el browser.Estos insertion points se crean con el tag `<content>`.
 
-**Tarea crear un div con la clase `card-header` que adentro tenga un insertion point para el `h2` y luego poner otro insertion point por furea del `card-header` para el resto del contenido.** El resultado deberia ser similar al siguiente:
+**Tarea: Crear un div con la clase `card-header` que adentro tenga un insertion point para el `h2` y luego poner otro insertion point por furea del `card-header` para el resto del contenido.** 
+El resultado deberia ser similar al siguiente:
 
 ````html
 <div class="card-header">
@@ -88,7 +89,9 @@ Como pueden ver, en este acso estamos utilizando el pseudo selector `::content` 
 
 ### Usando nuestro componente
 
-Ahora debemos **primero importar el componente recien creado en el `home-page.html` y luego usarlo dentro del `<div class="container">` de la siguiente manera**:
+Hora de usarlo!
+
+**Tarea: Importar el componente recien creado desde la `home-page.html` y luego usarlo dentro del `<div class="container">` de la siguiente manera**:
 
 
 ````html
@@ -102,12 +105,12 @@ Ahora debemos **primero importar el componente recien creado en el `home-page.ht
 </div>
 ````
 
-Deberiamos tener ahora algo como lo siguiente:
+Ahora, deberiamos ver algo similar a lo siguiente:
 
 ![added web](https://cloudup.com/cSA6K_9ZtMQ+)
 
 > **Nota:** Como una nota interesante, prueben cambiar de lugar el `h2` y el `p` de dentro del `<task-card>` y van a ver que la UI no cambia. Eso es porque nosotros setteamos el orden usando los `<content>` tags.
 
-[Continuemos ahora usando WebServices y Data Binding](4-web-services-data-binding.md)
+[Hora de agregar WebServices y DataBinding para mostrar las otras tareas!](4-web-services-data-binding.md)
 
 
