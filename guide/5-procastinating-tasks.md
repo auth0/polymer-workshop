@@ -1,22 +1,27 @@
 # Procastinando tareas
 
-Ya podemos ver el listado de tareas. No obstante, aun no tenemos forma de procastinar una tarea. A su vez, el listado de tareas es el mismo tanto en el tab `All` como en el `Procastinated`. La idea es que el tab `Procastinated` tenga solamente las tareas Procastinadas.
+Ya podemos ver el listado de tareas. No obstante, aun hay 2 cosas que debemos cambiar.
+
+1. Necesitamos una forma de procastinar las tareas
+1. El listado de tareas es el mismo tanto en el tab `All` como en el `Procastinated`. La idea es que el tab `Procastinated` tenga solamente las tareas Procastinadas.
+
+Hagamoslo!
 
 ## Agregando el toggle de tarea procastinada
 
-Lo primero que vamos a hacer es agregar un toggle que permita Procastinar una tarea dada. Si esta activo, eso implica que la tarea va a ser procastinada. Si esta off, significa que la vamos a hacer ahora.
+Lo primero que vamos a hacer es agregar un toggle que permita Procastinar una tarea en la `<task-card>`. 
 
-Para esto, necesitamos poder decirle a la `<task-card>` si la tarea esta procastinada o no y necesitamos poder cambiar el estado de procastinacion de la tarea. Esto significa que lo que necesitamos es Two Way Data Binding entre `task.procastinated` y la `<task-card>`. Para eso, vamos a usar [published properties](https://www.polymer-project.org/docs/polymer/polymer.html#published-properties).
+Para esto, necesitamos poder decirle a la `<task-card>` si la tarea esta procastinada o no y necesitamos poder cambiar el estado de procastinacion de la tarea desde la `<task-card>`. En otras palabras, lo que necesitamos es crear un binding entre la `<task-card>` y `task.procastinated`. Para eso, vamos a usar [published properties](https://www.polymer-project.org/docs/polymer/polymer.html#published-properties).
 
-Entonces, **nuestra primrea tarea es publicar la propiedad `procastinated` desde `<task-card>`**
+**Tarea: Publicar la propiedad `procastinated` desde `<task-card>`**
 
-> **Tip:** Podemos ver como publicar propiedades en [este articulo](https://www.polymer-project.org/docs/polymer/polymer.html#published-properties)
+> **Tip:** Podemos ver como publicar propiedades en [este articulo](https://www.polymer-project.org/docs/polymer/polymer.html#published-properties). Hay 2 formas diferentes. Podemos usar cualquiera de las 2!
 
-Una vez publicada la propiedad, podremos acceder a la misma desde el JS via `this.procastinated` o desde el HTML via bindings como `{{procastinated}}`.
+Una vez publicada la propiedad, podremos acceder a la misma desde el JS via `this.procastinated` o desde el HTML via un binding `{{procastinated}}`.
 
-Entonces, ahora lo que tenemos que hacer es agregar el toggle usando `<paper-toggle-button>`.
+Ahora ya podemos agregar el toggle que cambiara el valor de `task.procastinated` usando `<paper-toggle-button>`.
 
-**Nuestra tarea es ahora insertar el toggle en el siguiente lugar y binder el atributo `checked` del toggle a la propiedad `procastinated` que ahora estamos recibiendo.**
+**Tarea: Insertar el toggle donde se especifica a continuacion y bindear el atributo `checked` del toggle a la propiedad `procastinated` que nuestro WebComponent esta recibido por parametro.**
 
 ````html
 <div class="card-header">
@@ -28,7 +33,7 @@ Entonces, ahora lo que tenemos que hacer es agregar el toggle usando `<paper-tog
 
 > **Tip:** La documentacion sobre como usar el `<paper-toggle-button>` se puede encontrar [aqui](https://www.polymer-project.org/docs/elements/paper-elements.html#paper-toggle-button)
 
-Agreguemos el siguiente CSS para que nuestro Toggle se vea mejor:
+Ahora que ya esta implementado, agreguemos el siguiente CSS para que nuestro Toggle se vea mejor:
 
 ````css
 paper-toggle-button {
@@ -39,7 +44,7 @@ paper-toggle-button {
 }
 ````
 
-Por ultimo, ahora debemos pasar la propiedad `procastinated` desde `<task-list>` hacia `<task-card>` de la siguiente forma:
+Por ultimo, debemos pasar la propiedad `procastinated` desde la `<task-list>` hacia la `<task-card>` de la siguiente forma:
 
 ````html
 <template repeat="{{task in tasks}}">
