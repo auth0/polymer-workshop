@@ -31,7 +31,7 @@ Luego, estamos incluyendo nuestros primeros 2 WebComponents. El primero sera el 
 
 Vemos que el body tiene el atributo [`unresolved`](https://www.polymer-project.org/articles/styling-elements.html#preventing-fouc). Este atributo hace que el body solo se muestre cuando los WebComponents fueron cargados exitosamente. Si no lo incluyeramos, se veria contenido extraño mientras carga la pagina.
 
-Por ultimo, vemos que estamos usando `<app-router>`, el WebComponent que importamos mas arriba. En este caso, estamos creando la ruta `/home` que apunta a `home-page.html`. Este va a ser el archivo que vamos a modificar en esta primera parte.
+Por ultimo, vemos que estamos usando `<app-router>`, el WebComponent que importamos mas arriba. En este caso, estamos creando la ruta `/home` que apunta a `home-page.html`, el cual va a ser el archivo que vamos a modificar en esta primera parte.
 
 ## Let's code!
 
