@@ -50,21 +50,23 @@ Luego, dentro del tag `<style>` vemos el pseudo selector `:host`. Este va a sele
 
 Mas abajo vemos el selector `.card-header`. Este SOLO va a aftectar a los tags con clase `card-header` que se encuentren dentro del WebComponent. Si hay otro `.card-header` en la pagina, este no se vera afectado por el margen setteado.
 
-Por ultimo, en la parte de `<script>`, podemos ver que estamos llamando a `Polymer({})`, lo cual registra este elemento con el Browser para que sea reconocido luego cuando lo insertamos en otro lugar de la pagina.
+Por ultimo, en la parte de `<script>`, podemos ver que estamos llamando a `Polymer({})`. Esto registra la `<task-card>` con el Browser para que sea reconocido luego cuando lo insertamos en otro lugar de la pagina.
 
 ## Let's code!
 
 ### Haciendo el template
 
-Es hora de crear nuestro template! Como vieron en el ejemplo al principio, la idea con este elemento es poder tener un header con el titulo de la tarea y luego el body con la descripcion. Para eso, vamos a usar algo que se llama "Insertion points". Un "Insertion point" le dice al browser en que lugar de nuestro WebComponent se va a insertar el contenido adicional que fue añadido desde afuera. Estos insertion points se crean con el tag `<content>`.
+Es hora de crear nuestro template! 
 
-Entonces, lo que vamos a hacer es **crear un div con la clase `card-header` que adentro tenga un insertion point para el `h2` y luego poner otro insertion point por furea del `card-header` para el resto de los elementos agregados. Algo similar a lo siguiente:
+Como vimos en la imagen al principio, la idea es tener un header con el titulo de la tarea y luego la descripcion abajo mas pequeña. Para eso, vamos a usar algo que se llama __Insertion points__. Un __Insertion point__ le dice al browser en que lugar de nuestro WebComponent se va a insertar el contenido adicional que fue añadido desde afuera. Si no ponemos ningun insertion point y usamos un WebComponent como `<task-card><h3>Hola</h3></task-card>`, el contenido del H3 nunca sera mostrado por el browser.Estos insertion points se crean con el tag `<content>`.
+
+**Tarea crear un div con la clase `card-header` que adentro tenga un insertion point para el `h2` y luego poner otro insertion point por furea del `card-header` para el resto del contenido.** El resultado deberia ser similar al siguiente:
 
 ````html
 <div class="card-header">
   <insertion point para h2>
 </div>
-<insertion point>
+<insertion point para el resto del contenido>
 ````
 
 > **Tip:** Pueden ver como usar el `<content>` tag [aqui](https://dvcs.w3.org/hg/webcomponents/raw-file/57f8cfc4a7dc/explainer/index.html#shadow-dom-section) en la seccion "Content and Shadow Elements"
