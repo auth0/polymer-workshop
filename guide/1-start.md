@@ -1,6 +1,6 @@
 # Empecemos!
 
-Vamos a empezar a trabajar con la carpeta `starter`. Abranla con su editor favorito (Yo uso Sublime Text <3) y deberian ver la siguiente estructura de directorios:
+Vamos a empezar a trabajar con la carpeta `starter`. Abranla con su editor favorito (Yo uso Sublime Text <3). Deberian ver la siguiente estructura de directorios:
 
 ````html
 polymer-workshop/

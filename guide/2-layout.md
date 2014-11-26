@@ -2,7 +2,7 @@
 
 En este paso, lo que vamos a hacer es crear el layout basico de la aplicacion usando componentes Polymers ya existentes.
 
-Si van al archivo `index.html` van a ver algo como lo siguiente:
+Dentro de la carpeta `starter`, si vamos al archivo `index.html` veremos algo como lo siguiente:
 
 ````html
 <!doctype html>
@@ -10,30 +10,28 @@ Si van al archivo `index.html` van a ver algo como lo siguiente:
 <head>
   <title>Procastination app</title>
 
-  <meta name="viewport"
-  content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
 
-  <script src="../components/webcomponentsjs/webcomponents.js">
-  </script>
+  <script src="../components/webcomponentsjs/webcomponents.js"></script>
 
   <link rel="import" href="../components/app-router/app-router.html">
 
   <link rel="import" href="../components/font-roboto/roboto.html">
-...
+<!-- ... -->
 </head>
 <body unresolved>
   <app-router>
     <app-route path="/home" import="./home-page.html"></app-route>
-...
+<!-- ... -->
 ````
 
-Aqui, estamos primero importando `webcomponent.js`, el cual es el polyfill que permite que pos WebComponents funcionen en Browsers viejos.
+Aqui, estamos primero importando `webcomponent.js`, el cual es el polyfill que permite que podamos usar WebComponents aun en browsers que no los soportan de forma nativa. Es importante que importemos este script primero, antes que cualquier otra cosa que vayamos a realizar.
 
-Luego, estamos incluyendo nuestros primeros 2 WebComponents. Uno nos data la fuente Roboto para usar y el otro sera el router. 
+Luego, estamos incluyendo nuestros primeros 2 WebComponents. El primero sera el Router que usaremos en la aplicacion para las distintas URLs y el segundo nos importa la Google Web Font Roboto para poder usar a traves de nuestra aplicacion.
 
-Vemos que el body tiene el atributo `unresolved`. Este se pone para prevenir que haya un "flash" cuando se esta cargando la aplicacion en los browsers que no soportan WebComponents de forma nativa.
+Vemos que el body tiene el atributo [`unresolved`](https://www.polymer-project.org/articles/styling-elements.html#preventing-fouc). Este atributo hace que el body solo se muestre cuando los WebComponents fueron cargados exitosamente. Si no lo incluyeramos, en browsers viejos se veria contenido extraño durante unos segundos mientras carga la pagina.
 
-Por ultimo, vemos que estamos usando nuestro primer WebComponent. Estamos usando `app-router` el cual dice que si estamos en la URL del home, vaya a la `home-page.html`. Esta va a ser la primrea pagina que vamos a modificar!
+Por ultimo, vemos que estamos usando `<app-router>` el WebComponent que importamos mas arriba. En este caso, estamos creando la ruta `/home` la cual apunta a `home-page.html`, el cual va a ser el archivo que vamos a modificar en esta primera parte.
 
 ## Let's code!
 
