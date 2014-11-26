@@ -95,7 +95,7 @@ Se deberian ver asi:
 
 ![image](https://cloudup.com/cyM7EWHgwNU+)
 
-Como vemos en la imagen, los tabs no se expanden al width total de la toolbar. Vamos a arreglar eso!
+Como vemos en la imagen, los tabs no se expanden al width total de la toolbar y la barrita amarilla no esta alineada con el borde final del container. Vamos a arreglar eso!
 
 **Tarea: Indicar en `<paper-tabs>` que este elemento va a controlar su propio espacio y se va a expandir a todo el espacio provisto por el padre usando Flexbox.. A su vez, tambien debemos indicar que se va a alinear al final del container.**
 

@@ -1,10 +1,10 @@
 # Creando nuestro primer elemento
 
-Ahora que ya tenemos terminado el Layout de la aplicacion, podemos crear nuestro primer WebComponent oficial. 
+Ahora que ya tenemos terminado el Layout de la aplicacion, podemos crear nuestro primer WebComponent. 
 
-Lo que vamos a crear es una "Task card", la cual tendra los detalles de la tarea a realizar. Se va a ver asi.
+Vamos a crear una `<task-card>`. Esta tarjeta tendra los detalles de la tarea a procastinar. Tendra un header con el titulo y luego un texto con la descripcion. Se va a ver asi:
 
-![card](https://cloudup.com/cM5kcjReZWT+)
+![card](https://cloudup.com/cuwAQahVOY8+)
 
 Y se va a usar de la siguiente forma:
 
@@ -15,7 +15,7 @@ Y se va a usar de la siguiente forma:
 </task-card>
 ````
 
-Si vamos al archivo `task-card.html` vamos a ver que tenemos lo siguiente:
+Vayamos al archivo `task-card.html`:
 
 ````html
 <polymer-element name="task-card">
@@ -42,11 +42,13 @@ Si vamos al archivo `task-card.html` vamos a ver que tenemos lo siguiente:
 </polymer-element>
 ````
 
-En este archivo, primero estamos creando el WebComponent llamado `task-card` con `<polymer-element>`. Luego, todo lo que vaya dentro de `<template>` va a ser parte del ShadowDOM y por ende va a estar isolado del resto.
+En este archivo, lo primero que estamos haciendo es crear un WebComponent llamado `task-card`. Para eso, usamos el tag `<polymer-element>` especificandole el nombre del componente.
 
-El pseudo selector `:host` va a seleccionar al elemento que estamos creando, en este caso `<task-card>`. 
+Mas abajo vemos el tag `<template>`. Todo lo que vaya dentro de este tag va a ser parte del ShadowDOM de nuestro componente. Esto significa que todo este contenido va a estar isolado del resto.
 
-Luego, el selector `.card-header` SOLO va a aftectar al contenido de este WebComponent. Si hay otro `.card-header` en la pagina, este no se vera afectado por los cambios.
+Luego, dentro del tag `<style>` vemos el pseudo selector `:host`. Este va a seleccionar al elemento que estamos creando, en este caso `<task-card>`. 
+
+Mas abajo vemos el selector `.card-header`. Este SOLO va a aftectar a los tags con clase `card-header` que se encuentren dentro del WebComponent. Si hay otro `.card-header` en la pagina, este no se vera afectado por el margen setteado.
 
 Por ultimo, en la parte de `<script>`, podemos ver que estamos llamando a `Polymer({})`, lo cual registra este elemento con el Browser para que sea reconocido luego cuando lo insertamos en otro lugar de la pagina.
 
