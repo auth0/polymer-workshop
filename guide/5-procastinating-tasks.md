@@ -62,15 +62,17 @@ La lista ahora se deberia ver de la siguiente forma:
 
 Ahora ya podemos procastinar tareas. Lo que nos falta es que el tab `all` muestre todas las tareas y que el tab `procastinated` solo muestre las tareas procastinadas.
 
-Para eso, lo primero que vamos a hacer es exponer la propiedad `show` en nuestro `<task-list>` la cual sera enviada desde la `home-page.html` con el nombre del tab siendo mostrado actuamente.
+Para eso, lo primero que vamos a hacer es exponer la propiedad `show` en nuestro `<task-list>`. Esta propiedad sera enviada desde la `home-page.html` con el nombre del tab siendo mostrado actuamente (`all` o `procastinated`).
 
-**Tarea: Publicar la propiedad show en la `<task-list>`**
+**Tarea: Publicar la propiedad `show` en la `<task-list>`**
 
 > **Tip:** Es lo mismo que hicimos cuando publicamos la propiedad `procastinated`.
 
-Luego, desde nuestro `home-page.html` vamos a settear el valor de `show` en la `<task-list>`. Para esto, podriamos usar data binding pero vamos a usar eventos para aprender algo nuevo.
+Luego, desde nuestro `home-page.html` vamos a settear el valor de `show` en la `<task-list>`. 
 
-Cada component creado con Polymer tiene muchos [lifecycle events](https://www.polymer-project.org/docs/polymer/polymer.html#lifecyclemethods). Desde el momento en que un WebComponent es creado hasta el momento en que es removido del DOM, podemos hookearnos a cualquier lifecycle event para agregar comportamiento. En nuestro caso, una vez que nuestro WebComponent ya se encuentra preparado, vamos a escuchar al evento `core-select` del elemento `<paper-tabs>`, el cual es emitido cada vez que cambia el tab seleccionado. En el handler del event, vamos a settear la property `show` de la lista al nombre del tab seleccionado:
+> **Nota:** Para esto, podriamos usar data binding pero vamos a usar eventos para aprender algo nuevo.
+
+Cada component creado con Polymer tiene muchos [lifecycle events](https://www.polymer-project.org/docs/polymer/polymer.html#lifecyclemethods). Desde el momento en que un WebComponent es creado hasta el momento en que es removido del DOM, podemos hookearnos a cualquier lifecycle event para agregar comportamiento. En nuestro caso, una vez que nuestro WebComponent ya se encuentra preparado, vamos a escuchar al evento `core-select` del  `<paper-tabs>`, el cual es emitido cada vez que cambia el tab seleccionado. En el handler del event, vamos a settear la property `show` de la lista al nombre del tab seleccionado:
 
 ````js
 Polymer({
@@ -85,7 +87,9 @@ Polymer({
   });
 ````
 
-El helper `this.$` nos permite obtener elementos del DOM de forma facil mediante el uso de sus IDs. Haciendo `this.$.tabs` estamos obteniendo el elemento del DOM cuyo `id` es `tabs`.
+Aqui vemos que no solo podemos settear las _published properties_ via atributos del tag HTML, sino tambien desde el codigo JS.
+
+El helper `this.$` nos permite obtener elementos del DOM de forma facil mediante el uso de sus IDs. Por ejemplo, con `this.$.tabs` estamos obteniendo el elemento del DOM cuyo `id` es `tabs`.
 
 Luego, en el `<task-list>` debemos ocultar aquellas tareas que no fueron procastinadas si estamos mostrando el tab `procastinated`.
 
@@ -108,7 +112,7 @@ Ahora si vamos al tab Procastinated, se deberia ver asi:
 
 ![tab procastinated](https://cloudup.com/cLnhdzVtOz5+)
 
-## Conclusions
+## Concluciones
 
 Con esto damos por terminado el Workshop guiado. En este Workshop creamos varios WebComponents diferentes y los hicimos interactuar entre si. Ante cualquier duda que tengan cuando empiecen a jugar mas con Polymer, pueden mandar un email a [martin@gon.to](mailto:martin@gon.to) o a [cristian@auth0.com](mailto:cristian@auth0.com).
 
