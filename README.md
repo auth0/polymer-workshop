@@ -2,8 +2,9 @@
 
 En este repositorio encontraran el ejemplo que se desarrollara a traves del workshop en JSConfAR.
 
-Lo que vamos a construir es lo contrario a un TODO list: Una Procastination list. 
-La idea es tener 2 tabs. Uno con todas las tareas a realizar y otro con las tareas ya procastinadas.
+Lo que vamos a construir es una Procastination List. Es muy similar a una TODO List pero lo que vamos a hacer es marcar tareas como Procastinadas en vez de como realizadas.
+
+La idea es tener 2 tabs. Uno con todas las tareas a realizar y otro con las tareas ya procastinadas y tener un switch en cada tarea que nos permita procastinarlas.
 
 ![imagen](https://cloudup.com/cj2OstSLTIc+)
 
