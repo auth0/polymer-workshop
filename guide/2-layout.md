@@ -25,13 +25,13 @@ Dentro de la carpeta `starter`, si vamos al archivo `index.html` veremos algo co
 <!-- ... -->
 ````
 
-Aqui, estamos primero importando `webcomponent.js`, el cual es el polyfill que permite que podamos usar WebComponents aun en browsers que no los soportan de forma nativa. Es importante que importemos este script primero, antes que cualquier otra cosa que vayamos a realizar.
+Aqui, estamos primero importando `webcomponent.js`, el cual es el polyfill que permite que usemos WebComponents en browsers que aun no los soportan de forma nativa. Es importante que importemos este script primero, antes que cualquier otro WebComponent.
 
-Luego, estamos incluyendo nuestros primeros 2 WebComponents. El primero sera el Router que usaremos en la aplicacion para las distintas URLs y el segundo nos importa la Google Web Font Roboto para poder usar a traves de nuestra aplicacion.
+Luego, estamos incluyendo nuestros primeros 2 WebComponents. El primero sera el Router que usaremos en la aplicacion. El segundo nos importa la Google Web Font `Roboto`.
 
-Vemos que el body tiene el atributo [`unresolved`](https://www.polymer-project.org/articles/styling-elements.html#preventing-fouc). Este atributo hace que el body solo se muestre cuando los WebComponents fueron cargados exitosamente. Si no lo incluyeramos, en browsers viejos se veria contenido extraño durante unos segundos mientras carga la pagina.
+Vemos que el body tiene el atributo [`unresolved`](https://www.polymer-project.org/articles/styling-elements.html#preventing-fouc). Este atributo hace que el body solo se muestre cuando los WebComponents fueron cargados exitosamente. Si no lo incluyeramos, se veria contenido extraño mientras carga la pagina.
 
-Por ultimo, vemos que estamos usando `<app-router>` el WebComponent que importamos mas arriba. En este caso, estamos creando la ruta `/home` la cual apunta a `home-page.html`, el cual va a ser el archivo que vamos a modificar en esta primera parte.
+Por ultimo, vemos que estamos usando `<app-router>`, el WebComponent que importamos mas arriba. En este caso, estamos creando la ruta `/home` que apunta a `home-page.html`. Este va a ser el archivo que vamos a modificar en esta primera parte.
 
 ## Let's code!
 
