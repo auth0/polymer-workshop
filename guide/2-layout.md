@@ -37,7 +37,7 @@ Por ultimo, vemos que estamos usando `<app-router>`, el WebComponent que importa
 
 ### Agregando los imports
 
-Abramos ahora el archivo `home-page.html` y vamos a ver algo similar a lo siguiente:
+Abramos ahora el archivo `home-page.html`:
 
 ````html
 <link rel="import" href="../components/polymer/polymer.html">
@@ -54,21 +54,25 @@ Abramos ahora el archivo `home-page.html` y vamos a ver algo similar a lo siguie
 </polymer-element>
 ````
 
-Aqui estamos ya creando nuestro primer componente. En este componente, vamos a estar utilizando `<core-header-panel>`, `<core-toolbar>` y `<paper-tabs>` para realizar el Layout.  Entonces nuestra **primrea tarea es incluir estos WebComponents que vamos a utilizar**. 
+> Como vemos aqui, la `home-page` tambien es un WebComponent. No obstante, explicaremos mas acerca de como crearlos en el siguiente paso. 
 
-> **Tips:** Estos WebComponent se importan muy similar a Polymer y ya estan bajados en la carpeta `component`
+En este componente, vamos a estar utilizando `<core-header-panel>`, `<core-toolbar>` y `<paper-tabs>` para realizar el Layout.  
+
+**Tarea: Incluir estos WebComponents que vamos a utilizar**. 
+
+> **Tip:** Estos WebComponent se importan muy similar a Polymer y ya estan bajados en la carpeta `component`
 
 ### Haciendo el Layout
 
 Ahora que ya tenemos importados los elementos que vamos a usar es hora de hacer el layout.
 
-**Para eso, vamos a crear un `<core-header-panel>` y ponerle adentro un `<core-toolbar>` y un `<div class="container">`**
+**Tarea: Crear primero un `<core-header-panel>`. Adentro de este vamos a crear un `<core-toolbar>` y un `<div class="container">`**
 
-> **Tip:** Vimos como hacer un layout similar en los [slides aqui](https://docs.google.com/a/gon.to/presentation/d/1Xyr5LotQUDT9O8sH7Eau5-7SGXwMvys8FR0BjrI8oqo/edit#slide=id.g3a1d4647c_2_554)
+> **Tip:** Vimos como hacer un layout similar en [estos slides](https://docs.google.com/a/gon.to/presentation/d/1Xyr5LotQUDT9O8sH7Eau5-7SGXwMvys8FR0BjrI8oqo/edit#slide=id.g3a1d4647c_2_554)
 
-Para que el `<core-header-panel>` se vea, nosotros tenemos que settearle un height explicito. Una forma facil de hacer esto es mediante los [layout attributes](https://www.polymer-project.org/docs/polymer/layout-attrs.html) los cuales se basan en Flexbox.
+Para que el `<core-header-panel>` se vea, es necesario settearle un height explicito. Una forma facil de hacer esto es mediante los [layout attributes](https://www.polymer-project.org/docs/polymer/layout-attrs.html), los cuales se basan en [Flexbox](http://css-tricks.com/snippets/css/a-guide-to-flexbox/).
 
-**Ahora, al `<template>` tag le vamos a aclarar que queremos un layout vertical que ocupe todo el viewport y luego al `<core-header-panel>` le tenemos que settear que va a controlar su propio tamaño usando Flexbox**
+**Tarea: Al `<template>` tag le tenemos que especificar que queremos un layout vertical que ocupe todo el viewport. Luego, al `<core-header-panel>` le tenemos que settear que va a controlar su propio tamaño usando Flexbo**
 
 > **Tip:** Todas las propiedades que tenemos que usar se encuentran en la [documentaction de layouts](https://www.polymer-project.org/docs/polymer/layout-attrs.html)
 
