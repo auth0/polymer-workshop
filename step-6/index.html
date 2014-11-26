@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+
+<head>
+
+  <title>Procastination app</title>
+
+  <meta name="viewport"
+  content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+
+  <script src="../components/webcomponentsjs/webcomponents.js">
+  </script>
+
+  <link rel="import" href="../components/font-roboto/roboto.html">
+
+  <link rel="import" href="../components/app-router/app-router.html">
+
+  <style type="text/css">
+    html,body {
+      height: 100%;
+      margin: 0;
+      background-color: #E5E5E5;
+      font-family: 'RobotoDraft', sans-serif;
+    }
+  </style>
+
+</head>
+
+<body unresolved>
+
+  <app-router>
+
+    <app-route path="/home" import="./home-page.html"></app-route>
+    <app-route path="/item/:uid" import="./item-page.html"></app-route>
+
+    <app-route path="*" redirect="/home"></app-route>
+
+  </app-router>
+
+
+</body>
+
+</html>

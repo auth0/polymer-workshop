@@ -1,8 +1,10 @@
-# Creando nuestro primer elemento
+# Creando nuestro primer WebComponent
 
-Ahora que ya tenemos terminado el Layout de la aplicacion, podemos crear nuestro primer WebComponent. 
+Ahora que ya sabemos usar WebComponents existentes y que tenemos terminado el Layout de la aplicacion, podemos crear nuestro primer WebComponent. 
 
-Vamos a crear una `<task-card>`. Esta tarjeta tendra los detalles de la tarea a procastinar. Tendra un header con el titulo y luego un texto con la descripcion. Se va a ver asi:
+## Creando `<task-card>`
+
+Esta tarjeta tendra los detalles de la tarea a procastinar. Tendra un header con el titulo y luego un texto con la descripcion. Se va a ver asi:
 
 ![card](https://cloudup.com/cuwAQahVOY8+)
 
@@ -14,6 +16,8 @@ Y se va a usar de la siguiente forma:
   <p>Go to the supermarket and buy some milk</p>
 </task-card>
 ````
+
+### Entendiendo la estructura de un WebComponent
 
 Vayamos al archivo `task-card.html`:
 
@@ -42,13 +46,13 @@ Vayamos al archivo `task-card.html`:
 </polymer-element>
 ````
 
-En este archivo, lo primero que estamos haciendo es crear un WebComponent llamado `task-card`. Para eso, usamos el tag `<polymer-element>` especificandole el nombre del componente.
+Lo primero que vemos es el tag `<polymer-element>`. Este se encarga de crear un WebComponent llamado `task-card`. Para eso usamos la property `name` de este tag. 
 
 Mas abajo vemos el tag `<template>`. Todo lo que vaya dentro de este tag va a ser parte del ShadowDOM de nuestro componente. Esto significa que todo este contenido va a estar isolado del resto.
 
 Luego, dentro del tag `<style>` vemos el pseudo selector `:host`. Este va a seleccionar al elemento que estamos creando, en este caso `<task-card>`. 
 
-Mas abajo vemos el selector `.card-header`. Este SOLO va a aftectar a los tags con clase `card-header` que se encuentren dentro del WebComponent. Si hay otro `.card-header` en la pagina, este no se vera afectado por el margen setteado.
+Mas abajo vemos el selector `.card-header`. Este _solo_ va a aftectar a los tags con clase `card-header` que se encuentren dentro del WebComponent. 
 
 Por ultimo, en la parte de `<script>`, podemos ver que estamos llamando a `Polymer({})`. Esto registra la `<task-card>` con el Browser para que sea reconocido luego cuando lo insertamos en otro lugar de la pagina.
 
@@ -65,12 +69,12 @@ El resultado deberia ser similar al siguiente:
 
 ````html
 <div class="card-header">
-  <insertion point para h2>
+  <!-- Insertion point para el h2 -->
 </div>
-<insertion point para el resto del contenido>
+<!-- Insertion point para el resto del contenido -->
 ````
 
-> **Tip:** Pueden ver como usar el `<content>` tag [aqui](https://dvcs.w3.org/hg/webcomponents/raw-file/57f8cfc4a7dc/explainer/index.html#shadow-dom-section) en la seccion "Content and Shadow Elements"
+> **Tip:** Pueden ver como usar el `<content>` tag [aqui](https://dvcs.w3.org/hg/webcomponents/raw-file/57f8cfc4a7dc/explainer/index.html#shadow-dom-section) en la seccion "Content and Shadow Elements". Prestar especial atencion al atributo `select`.
 
 Ahora, lo que vamos a hacer es darle estilos al componente que acabamos de crear. Para eso, debemos agregar lo siguiente adentro del tag `<style>`
 
@@ -85,7 +89,7 @@ Ahora, lo que vamos a hacer es darle estilos al componente que acabamos de crear
 }
 ````
 
-Como pueden ver, en este acso estamos utilizando el pseudo selector `::content` para solo darle estilos a elementos dentro de un `<content>`
+Como pueden ver, en este caso estamos utilizando el pseudo selector `::content` para solo darle estilos a elementos dentro de un `<content>`.
 
 ### Usando nuestro componente
 

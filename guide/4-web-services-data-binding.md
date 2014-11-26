@@ -1,20 +1,21 @@
 # Usando WebServices y DataBinding
 
-Ya tenemos nuestra `<task-card>` para mostrar la informacion de una tarea creada. Lo que vamos a hacer ahora es obtener una lista de tareas desde un servicio web y luego usar data binding para mostrarlas.
+Ya tenemos nuestra `<task-card>` para mostrar la informacion de una tarea creada. Lo que vamos a hacer ahora es obtener una lista de tareas desde un servicio web y luego usar one way data binding para mostrarlas, en otras palabras rendering.
 
 Para eso, nosotros ya hemos creado un servicio llamado `<task-service>`. Este servicio se conecta a una API fake para hacer el request de todas las tareas a realizar. Vamos a usar este servicio desde el element `<task-list>` el cual se encargara de mostrar la lista de tareas.
 
 ## Agregando el servicio
 
-Lo primero que vamos a hacer es agregar el servicio a nuestra `<task-list>`.
+Lo primero que vamos a hacer es importar y usar el servicio en nuestra `<task-list>`.
 
 **Tarea: Hacer un import al `<task-service>` y luego usarlo de la siguiente manera:**
 
 ````html
-<task-service id="service" tasks="{{tasks}}"></task-service>
+<task-service id="service" tasks="{{allTasks}}"></task-service>
+<!-- Insertar el resto del contenido desde aqui -->
 ````
 
-Con el `{{}}` estamos creando un DataBinding entre la lista de tareas devueltas por el servicio y una variable de instancia de nuestro WebComponent. Esto quiere decir que ni bien lleguen las listas de tareas del servidor, nosotros vamos a poder acceder a las tareas via `this.tasks` desde la `<task-list>`.
+Con el `{{}}` estamos creando un DataBinding entre la lista de tareas devueltas por el servicio y una variable de instancia de nuestro WebComponent. Esto quiere decir que ni bien lleguen las listas de tareas del servidor, nosotros vamos a poder acceder a las tareas via `this.allTasks` desde la `<task-list>`.
 
 ## Creando el listado de tareas
 
@@ -25,14 +26,14 @@ Ahora que ya obtenemos las tareas del servicio, lo que nos resta hacer es iterar
 ````html
 <div layout vertical center>
 
-  <template repeat="{{task in tasks}}">
+  <template repeat="{{task in allTasks}}">
     <!-- Insertar aqui una task card por cada task -->
   </template>
 
 </div>
 ````
 
-El `repeat` itera por la lista de tareas. Cada tarea dentro de la lista es asignada a una variable temporal `task`, la cual puede ser usada dentro del `<template>`. En este caso, debemos mostrar los datos de la variable `task` en una `<task-card>`.
+El `repeat` es una instruccion que itera por la lista de tareas. Cada tarea dentro de la lista es asignada a una variable temporal `task`, la cual puede ser usada dentro del `<template>`. En este caso, debemos mostrar los datos de la variable `task` en una `<task-card>`.
 
 > **Tip:** Es necesario primero importar la `<task-card>` y luego usaremos bindings con `{{}}` para mostrar las propiedades de la tarea.
 

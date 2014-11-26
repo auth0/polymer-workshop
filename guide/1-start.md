@@ -13,6 +13,7 @@ polymer-workshop/
   step-3/
   step-4/
   step-5/
+  step-6/
   .bowerrc      <!-- Archivo de configuracion de bower -->
   .gitignore
   bower.json    <!-- El archivo de metadata de bower donde pusimos las dependencias -->
@@ -24,4 +25,4 @@ Una vez levantado el servidor, vayan a `http://localhost:3000/starter/` y deberi
 
 ![Start](https://cloudup.com/ci238hBeemc+)
 
-Ahora que ya podemos ver la app, empecemos a codear! [Vamos a empezar haciendo el Layout!](2-layout.md)
+Ahora que ya podemos ver la app, empecemos a codear! [Vamos a empezar haciendo el Layout!](2-using-polymer-core-components.md)

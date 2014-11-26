@@ -1,9 +1,9 @@
-# Procastinando tareas
+# Two Way Data Binding y Publicar Propiedades
 
 Ya podemos ver el listado de tareas. No obstante, aun hay 2 cosas que debemos cambiar.
 
 1. Necesitamos una forma de procastinar las tareas
-1. El listado de tareas es el mismo tanto en el tab `All` como en el `Procastinated`. La idea es que el tab `Procastinated` tenga solamente las tareas Procastinadas.
+1. Necesitamos una forma de filtrar tareas para poder mostrarlas en el tab `procastinated`.
 
 ## Agregando el toggle para procastinar tareas
 
@@ -58,23 +58,24 @@ La lista ahora se deberia ver de la siguiente forma:
 
 ![list](https://cloudup.com/cYBm3FwELEm+)
 
-## Mostrando las tareas que corresponde por tab
+## Filtrando las tareas procastinadas para el tab `procastinated`
 
-Ahora ya podemos procastinar tareas. Lo que nos falta es que el tab `all` muestre todas las tareas y que el tab `procastinated` solo muestre las tareas procastinadas.
+Ahora ya podemos procastinar tareas. Lo que nos falta es que el tab `all` muestre todas las tareas y que el tab `procastinated` muestre solo las tareas procastinadas.
 
-Para eso, lo primero que vamos a hacer es exponer la propiedad `show` en nuestro `<task-list>`. Esta propiedad sera enviada desde la `home-page.html` con el nombre del tab siendo mostrado actuamente (`all` o `procastinated`).
+Para eso, lo primero que vamos a hacer es publicar la propiedad `show` en nuestro `<task-list>`. Esta propiedad sera enviada desde la `home-page.html` con el nombre del tab siendo mostrado actuamente (`all` o `procastinated`).
 
 **Tarea: Publicar la propiedad `show` en la `<task-list>`**
 
 > **Tip:** Es lo mismo que hicimos cuando publicamos la propiedad `procastinated`.
 
-Luego, desde nuestro `home-page.html` vamos a settear el valor de `show` en la `<task-list>`. 
+Luego, desde nuestro `home-page.html` vamos a asignar el valor de `show` en la `<task-list>`. 
 
 > **Nota:** Para esto, podriamos usar data binding pero vamos a usar eventos para aprender algo nuevo.
 
-Cada component creado con Polymer tiene muchos [lifecycle events](https://www.polymer-project.org/docs/polymer/polymer.html#lifecyclemethods). Desde el momento en que un WebComponent es creado hasta el momento en que es removido del DOM, podemos hookearnos a cualquier lifecycle event para agregar comportamiento. En nuestro caso, una vez que nuestro WebComponent ya se encuentra preparado, vamos a escuchar al evento `core-select` del  `<paper-tabs>`, el cual es emitido cada vez que cambia el tab seleccionado. En el handler del event, vamos a settear la property `show` de la lista al nombre del tab seleccionado:
+Cada component creado con Polymer tiene muchos [lifecycle events](https://www.polymer-project.org/docs/polymer/polymer.html#lifecyclemethods). Desde el momento en que un WebComponent es creado hasta el momento en que es removido del DOM, podemos hookearnos a cualquier lifecycle event para agregar comportamiento. En nuestro caso, una vez que nuestro WebComponent ya se encuentra preparado, vamos a escuchar al evento `core-select` del `<paper-tabs>`, el cual es emitido cada vez que cambia el tab seleccionado. En el handler del event, vamos a asignar la property `show` de la lista al nombre del tab seleccionado:
 
 ````js
+<!-- home-page.html -->
 Polymer({
     ready: function() {
       var tabs = this.$.tabs;
@@ -87,15 +88,15 @@ Polymer({
   });
 ````
 
-Aqui vemos que no solo podemos settear las _published properties_ via atributos del tag HTML, sino tambien desde el codigo JS.
+Aqui vemos que no solo podemos asignar las _published properties_ via atributos del tag HTML, sino tambien desde el codigo JS.
 
-El helper `this.$` nos permite obtener elementos del DOM de forma facil mediante el uso de sus IDs. Por ejemplo, con `this.$.tabs` estamos obteniendo el elemento del DOM cuyo `id` es `tabs`.
+El helper `this.$` nos permite obtener elementos del ShadowDOM de forma facil mediante el uso de sus IDs. Por ejemplo, con `this.$.tabs` estamos obteniendo el elemento del ShadowDOM cuyo `id` es `tabs`.
 
 Luego, en el `<task-list>` debemos ocultar aquellas tareas que no fueron procastinadas si estamos mostrando el tab `procastinated`.
 
-Para eso, vamos a usar la propiedad [`hidden?`](https://www.polymer-project.org/docs/polymer/layout-attrs.html#general-purpose-attributes) que nos provee polymer. `Hidden?` nos permite settear `display: none` a un elemento basado en una condicion booleana.
+Para eso, vamos a usar la propiedad [`hidden?`](https://www.polymer-project.org/docs/polymer/layout-attrs.html#general-purpose-attributes) que nos provee Polymer. El atributo `hidden?` nos permite asignar `display: none` a un elemento basado en una condicion booleana.
 
-**Tarea: Completar la expresion de `hidden` basandonos en lo que vale  la variable `show` y `task.procastinated`**
+**Tarea: Completar la expresion de `hidden` basandonos en lo que vale la variable `show` y `task.procastinated`**
 
 ````html
 <template repeat="{{task in tasks}}">
@@ -108,14 +109,16 @@ Para eso, vamos a usar la propiedad [`hidden?`](https://www.polymer-project.org/
 </template>
 ````
 
-Ahora si vamos al tab Procastinated, se deberia ver asi:
+Ahora si vamos al tab Procastinated, deberia verse asi:
 
 ![tab procastinated](https://cloudup.com/cLnhdzVtOz5+)
 
 ## Concluciones
 
-Con esto damos por terminado el Workshop guiado. En este Workshop creamos varios WebComponents diferentes y los hicimos interactuar entre si. Ante cualquier duda que tengan cuando empiecen a jugar mas con Polymer, pueden mandar un email a [martin@gon.to](mailto:martin@gon.to) o a [cristian@auth0.com](mailto:cristian@auth0.com).
+Con esto damos por terminado el Workshop guiado. En este Workshop creamos varios WebComponents diferentes y los hicimos interactuar entre si.
+
+Ante cualquier duda que tengan cuando empiecen a jugar mas con Polymer, pueden mandar un email a [martin@gon.to](mailto:martin@gon.to) o a [cristian@auth0.com](mailto:cristian@auth0.com).
 
 ## Extra Extra
 
-Si te quedaste con ganas de mas, agregamos un ultimo paso (opcional) en el cual tendran que [agregar la pagina de detalle de una tarea](6-item-detail.md). Este paso tiene indicaciones a mas alto nivel para que puedan probar todo lo que aprendieron :).
+Si te quedaste con ganas de mas, agregamos un ultimo paso (_opcional_) en el cual tendran que [agregar la pagina de detalle de una tarea](6-item-detail.md). Este paso tiene indicaciones de mas alto nivel para que puedan probar todo lo que aprendieron :).

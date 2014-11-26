@@ -1,4 +1,8 @@
-# Layout
+# Usando Polymer Core Components
+
+## Configurando el Layout
+
+### Configurando el index.html
 
 En este paso, lo que vamos a hacer es crear el layout basico de la aplicacion usando componentes Polymers ya existentes.
 
@@ -58,12 +62,11 @@ Este componente representa a la pagina Home. Vamos a estar utilizando `<core-hea
 
 **Tarea: Incluir estos WebComponents que vamos a utilizar**. 
 
-
-> **Tip:** Estos WebComponent se importan muy similar a Polymer y ya estan bajados en la carpeta `component`
+> **Tip:** Estos WebComponent se importan de la misma forma que Polymer y se los puede encontrar en la carpeta `components`. El nombre del archivo a importar es por standard siempre el mismo que el del WebComponent. Por ejemplo `<link rel="import" href="../components/some-component/some-component.html">`
 
 > **Nota:** Como vemos aqui, la `home-page` es un WebComponent. No obstante, explicaremos mas acerca de como crearlos en el siguiente paso. 
 
-### Haciendo el Layout
+### Usando los WebComponents importados
 
 Ahora que ya tenemos importados los elementos que vamos a usar es hora de hacer el layout.
 
@@ -71,11 +74,11 @@ Ahora que ya tenemos importados los elementos que vamos a usar es hora de hacer 
 
 > **Tip:** Vimos como hacer un layout similar en [estos slides](https://docs.google.com/a/gon.to/presentation/d/1Xyr5LotQUDT9O8sH7Eau5-7SGXwMvys8FR0BjrI8oqo/edit#slide=id.g3a1d4647c_2_554)
 
-Para que el `<core-header-panel>` se vea, es necesario settearle un height explicito. Una forma facil de hacer esto es mediante los [layout attributes](https://www.polymer-project.org/docs/polymer/layout-attrs.html), los cuales se basan en [Flexbox](http://css-tricks.com/snippets/css/a-guide-to-flexbox/).
+Para que el `<core-header-panel>` sea visible en el layout es necesario asignarle un height especifico. Una forma facil de hacer esto es mediante los [layout attributes](https://www.polymer-project.org/docs/polymer/layout-attrs.html), los cuales se basan en [Flexbox](http://css-tricks.com/snippets/css/a-guide-to-flexbox/).
 
-**Tarea: Al `<template>` tag le tenemos que especificar que queremos un layout vertical que ocupe todo el viewport. Luego, al `<core-header-panel>` le tenemos que settear que va a controlar su propio tamaño usando Flexbox**
+**Tarea: Al `<template>` tag le tenemos que especificar que queremos un layout vertical que ocupe todo el viewport. Luego, al `<core-header-panel>` le tenemos que asignar que va a controlar su propio tamaño usando Flexbox**
 
-> **Tip:** Todas las propiedades que tenemos que usar se encuentran en la [documentaction de layouts](https://www.polymer-project.org/docs/polymer/layout-attrs.html)
+> **Tip:** Prestar especial atencion a las propiedades `layout`, `horizontal`, `vertical` y `flex`.
 
 Ahora ya se deberia ver nuestro Header y nuestro Content diferenciados:
 
@@ -85,21 +88,30 @@ Ahora ya se deberia ver nuestro Header y nuestro Content diferenciados:
 
 Ya tenemos ahora nuestro Layout principal finalizado. Lo que vamos a hacer ahora es agregar 2 tabs a nuestra toolbar. Uno con todas las tareas a realizar (All) y otro con las tareas que ya procastinamos (Procastinated).
 
-Para eso, vamos a usar los [`<paper-tabs>`](https://www.polymer-project.org/docs/elements/paper-elements.html#paper-tabs). 
+Para eso, vamos a usar los [`<paper-tabs>`](https://www.polymer-project.org/docs/elements/paper-elements.html#paper-tabs), los cuales heredan de [`<core-selector>`](https://www.polymer-project.org/docs/elements/core-elements.html#core-selector). 
 
 **Tarea: Crear 2 tabs. El primero deberia decir `all` y el otro `procastinated`**. 
 
-> **Tip:** La implementacion es igual a la de la [documentacion](https://www.polymer-project.org/docs/elements/paper-elements.html#paper-tabs), la unica diferencia es que nosotros para identificar a cada tab vamos a usar la property `name` en vez del indice y `selected` va a apuntar al `name` del primer tab por defecto.
+> **Tip1:** La implementacion es similar a la de la [documentacion de `<paper-tabs>`](https://www.polymer-project.org/docs/elements/paper-elements.html#paper-tabs)
 
-Se deberian ver asi:
+> **Tip2:** Nosotros para seleccionar el tab seleccionado usaremos la property `name` en vez del indice. La implementacion deberia ser similar a:
+
+````html
+<paper-tabs selected="pepe">
+  <paper-tab name="pepe">Pepe</paper-tab>
+  <paper-tab name="juan">Juan</paper-tab>
+</paper-tabs>
+````
+
+El resultado final deberia verse asi:
 
 ![image](https://cloudup.com/cyM7EWHgwNU+)
 
 Como vemos en la imagen, los tabs no se expanden al width total de la toolbar y la barrita amarilla no esta alineada con el borde final del container. Vamos a arreglar eso!
 
-**Tarea: Indicar en `<paper-tabs>` que este elemento va a controlar su propio espacio y se va a expandir a todo el espacio provisto por el padre usando Flexbox.. A su vez, tambien debemos indicar que se va a alinear al final del container.**
+**Tarea: Indicar en `<paper-tabs>` que este elemento va a controlar su propio espacio y se va a expandir a todo el espacio provisto por el padre usando Flexbox. A su vez, tambien debemos indicar que se va a alinear al final del container.**
 
-> **Tip:** Ambas properties a usar se encuentra en la documentacion de [layout](https://www.polymer-project.org/docs/polymer/layout-attrs.html) y una la usamos en un ejercicio anterior
+> **Tip:** Ambas properties a usar se encuentra en la documentacion de [layout](https://www.polymer-project.org/docs/polymer/layout-attrs.html). Prestar especial atencion a `self-end` y `flex`.
 
 Ahora, se deberia ver mucho mejor:
 
