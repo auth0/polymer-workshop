@@ -2,7 +2,7 @@
 
 Empezaremos el proyecto con la carpeta `starter`. Si la abren con su editor preferido (Yo uso `Sublime Text` <3), deberian ver la siguiente estructura de directorios:
 
-````
+````html
 polymer-workshop/
   api/          <!-- una API fake para consumir -->
   components/   <!-- Las dependencias ya instaladas por Bower -->
