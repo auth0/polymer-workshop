@@ -19,9 +19,19 @@ Con el `{{}}` estamos creando un DataBinding entre la lista de tareas devueltas 
 
 > Nota: si se fijan en `task-service.html` van a ver que se crea un array de `tasks`. Lo que estamos haciendo al instanciar el template es crear una variable `allTasks` y asignarle el valor del array de `tasks`. Para generalizarlo: `variable-del-service={{variable-para-binding}}`
 
+## Mostrando el listado en la home
+
+El `<task-list>` lo vamos a estar mostrando en nuestro `home-page.html`. Entonces, las tareas a realizar son las siguientes:
+
+**Tarea 2: Importar el `<task-list>` en nuestro home**
+
+**Tarea 3: Usarlo dentro del `<div class="container">`. Pongamosle de `id` `list` al `<task-list>`**
+
+> **Tip:** Para ver que se haya importado el `<task-list>` correctamente, pueden poner en el contenido de la `<task-list>` un `<p>Hola</p>` y luego chequear que se haya mostrado en el home.
+
 ## Creando el listado de tareas
 
-Ahora que ya obtenemos las tareas del servicio, lo que nos resta hacer es iterar sobre las mismas y mostrarlas. 
+Ahora que ya obtenemos las tareas del servicio, lo que nos resta hacer es iterar sobre las mismas y mostrarlas en nuestro `<task-list>`.
 
 **Tarea 2: Mostrar por cada tarea una `<task-card>` con la informacion de su nombre y descripcion. Las propiedas a mostrar de la task son `task.name` y `task.description`. Usar el siguiente template como referencia:**
 
@@ -39,17 +49,8 @@ El `repeat` es una instruccion que itera por la lista de tareas. Cada tarea dent
 
 > **Tip:** Es necesario primero importar la `<task-card>` y luego usaremos bindings con `{{}}` para mostrar las propiedades de la tarea.
 
-## Mostrando el listado en la home
-
-Lo unico que nos resta hacer ahora es incluir el `<task-list>` en nuestro `home-page.html` y mostrarlo como parte del contenido.
-
-**Tarea 3: Importar el `<task-list>` en nuestro home**
-
-**Tarea 4: Usarlo dentro del `<div class="container">`. Pongamosle de `id` `list` al `<task-list>`**
-
 Ahora, deberiamos ver el siguiente listado de tareas
 
 ![result](https://cloudup.com/cG15DAWYgXr+)
 
 [Continuemos agregando una forma de poder procastinar las tareas](5-procastinating-tasks.md).
-
