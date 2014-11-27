@@ -111,6 +111,8 @@ Para eso, vamos a usar la propiedad [`hidden?`](https://www.polymer-project.org/
 
 **Tarea 7: Completar la expresion de `hidden` basandonos en lo que vale la variable `show` y `task.procastinated`**
 
+> **Hint**. Podes hacer cosas asi `a == 'foo' && somethingelse` dentro de una expresion.
+
 ````html
 <template repeat="{{task in tasks}}">
   <task-card 
