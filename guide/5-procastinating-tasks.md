@@ -11,7 +11,7 @@ Lo primero que vamos a hacer es agregar en la `<task-card>` un toggle que permit
 
 Para eso, vamos a usar `<paper-toggle-button>`.
 
-### Tarea 1: Insertar el toggle donde se especifica a continuacion
+#### Tarea 1: Insertar el toggle donde se especifica a continuacion
 
 ````html
 <div class="card-header">
@@ -39,7 +39,7 @@ Ya deberiamos ver el Toggle en nuestra pagina ahora:
 
 Sin embargo, al cambiar el toggle nada cambia. Necesitamos que cuando se cambie el toggle, cambie el valor de `procastinated` de la tarea. A su vez, el Toggle deberia empezar en ON si una tarea esta `procastinated`. Para esto, necesitamos poder decirle a la `<task-card>` si la tarea esta procastinada o no y necesitamos poder cambiar el estado de procastinacion de la tarea desde la `<task-card>`. En otras palabras, lo que necesitamos es crear  _2 way data binding_ entre la `<task-card>` y `task.procastinated`. Para eso, vamos a usar [published properties](https://www.polymer-project.org/docs/polymer/polymer.html#published-properties).
 
-### Tarea 2: Publicar la propiedad `procastinated` desde `<task-card>`
+#### Tarea 2: Publicar la propiedad `procastinated` desde `<task-card>`
 
 > **Tip:** Podemos ver como publicar propiedades en [este articulo](https://www.polymer-project.org/docs/polymer/polymer.html#published-properties). Hay 2 formas diferentes. Podemos usar cualquiera de las 2!
 
@@ -51,7 +51,7 @@ Ahora debemos bindear el estado del toggle con la propiedad `procastinated` que 
 
 > **Tip:** La documentacion sobre como usar la property `checked` del `<paper-toggle-button>` se puede encontrar [aqui](https://www.polymer-project.org/docs/elements/paper-elements.html#paper-toggle-button)
 
-### Tarea 4: Por ultimo, debemos pasar la propiedad `procastinated` desde la `<task-list>` hacia la `<task-card>`
+#### Tarea 4: Por ultimo, debemos pasar la propiedad `procastinated` desde la `<task-list>` hacia la `<task-card>`
 
 > **Tip:** El codigo se deberia ver de la siguiente forma:
 
@@ -75,7 +75,7 @@ Ahora ya podemos procastinar tareas. Lo que nos falta es que el tab `all` muestr
 
 Para eso, lo primero que vamos a hacer es publicar la propiedad `show` en nuestro `<task-list>`. Esta propiedad sera enviada desde la `home-page.html` con el nombre del tab siendo mostrado actuamente (`all` o `procastinated`).
 
-### Tarea 5: Publicar la propiedad `show` en la `<task-list>`
+#### Tarea 5: Publicar la propiedad `show` en la `<task-list>`
 
 > **Tip:** Es lo mismo que hicimos cuando publicamos la propiedad `procastinated`.
 
@@ -85,7 +85,7 @@ Luego, desde nuestro `home-page.html` vamos a asignar el valor de `show` en la `
 
 Cada component creado con Polymer tiene muchos [lifecycle events](https://www.polymer-project.org/docs/polymer/polymer.html#lifecyclemethods). Desde el momento en que un WebComponent es creado hasta el momento en que es removido del DOM, podemos hookearnos a cualquier lifecycle event para agregar comportamiento. En nuestro caso, una vez que nuestro WebComponent ya se encuentra preparado, vamos a escuchar al evento `core-select` del `<paper-tabs>`, el cual es emitido cada vez que cambia el tab seleccionado. En el handler del event, vamos a asignar la property `show` de la lista al nombre del tab seleccionado:
 
-### Tarea 6: Agregar entonces el siguiente codigo en la `home-page.html` para poder escuchar el evento del cambio de tab
+#### Tarea 6: Agregar entonces el siguiente codigo en la `home-page.html` para poder escuchar el evento del cambio de tab
 
 ````js
 <!-- home-page.html -->
@@ -109,7 +109,7 @@ Luego, en el `<task-list>` debemos ocultar aquellas tareas que no fueron procast
 
 Para eso, vamos a usar la propiedad [`hidden?`](https://www.polymer-project.org/docs/polymer/layout-attrs.html#general-purpose-attributes) que nos provee Polymer. El atributo `hidden?` nos permite asignar `display: none` a un elemento basado en una condicion booleana.
 
-### Tarea 7: Completar la expresion de `hidden` basandonos en lo que vale la variable `show` y `task.procastinated`
+#### Tarea 7: Completar la expresion de `hidden` basandonos en lo que vale la variable `show` y `task.procastinated`
 
 > **Hint**. Podes hacer cosas asi `a == 'foo' && somethingelse` dentro de una expresion.
 
@@ -136,7 +136,7 @@ Ante cualquier duda que tengan cuando empiecen a jugar mas con Polymer, pueden m
 
 ## Quiero mi remera!
 
-### Tarea 8: Para ganar tu remera de Auth0 tenes que twittear algo similar a lo siguiente:
+#### Tarea 8: Para ganar tu remera de Auth0 tenes que twittear algo similar a lo siguiente:
 
 ````
 Polymer workshop with @mgonto and @cristandouce from @auth0 was [disastrous|nice|good|awesome|outstanding] #jsconfar

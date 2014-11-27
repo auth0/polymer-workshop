@@ -64,7 +64,7 @@ Es hora de crear nuestro template!
 
 Como vimos en la imagen al principio, la idea es tener un header con el titulo de la tarea y luego la descripcion abajo mas pequeña. Para eso, vamos a usar algo que se llama _Insertion points_. Un _Insertion point_ le dice al browser en que lugar de nuestro WebComponent se va a insertar el contenido adicional que fue añadido desde afuera. Si no ponemos ningun insertion point y usamos un WebComponent como `<task-card><h3>Hola</h3></task-card>`, el contenido del H3 nunca sera mostrado por el browser.Estos insertion points se crean con el tag `<content>`.
 
-#### Tarea 1: Crear un div con la clase `card-header` que adentro tenga un insertion point para el `h2` y luego poner otro insertion point por furea del `card-header` para el resto del contenido.
+##### Tarea 1: Crear un div con la clase `card-header` que adentro tenga un insertion point para el `h2` y luego poner otro insertion point por furea del `card-header` para el resto del contenido.
 El resultado deberia ser similar al siguiente:
 
 ````html
@@ -95,9 +95,9 @@ Como pueden ver, en este caso estamos utilizando el pseudo selector `::content` 
 
 Hora de usarlo!
 
-#### Tarea 2: Importar el componente recien creado desde la `home-page.html`
+##### Tarea 2: Importar el componente recien creado desde la `home-page.html`
 
-#### Tarea 3: Usarlo dentro del `<div class="container">` de la siguiente manera:
+##### Tarea 3: Usarlo dentro del `<div class="container">` de la siguiente manera:
 
 
 ````html
