@@ -51,7 +51,9 @@ Ahora debemos bindear el estado del toggle con la propiedad `procastinated` que 
 
 > **Tip:** La documentacion sobre como usar la property `checked` del `<paper-toggle-button>` se puede encontrar [aqui](https://www.polymer-project.org/docs/elements/paper-elements.html#paper-toggle-button)
 
-Por ultimo, debemos pasar la propiedad `procastinated` desde la `<task-list>` hacia la `<task-card>` de la siguiente forma:
+**Tarea 4: Por ultimo, debemos pasar la propiedad `procastinated` desde la `<task-list>` hacia la `<task-card>`**
+
+> **Tip:** El codigo se deberia ver de la siguiente forma:
 
 ````html
 <!-- task-list.html -->
@@ -73,7 +75,7 @@ Ahora ya podemos procastinar tareas. Lo que nos falta es que el tab `all` muestr
 
 Para eso, lo primero que vamos a hacer es publicar la propiedad `show` en nuestro `<task-list>`. Esta propiedad sera enviada desde la `home-page.html` con el nombre del tab siendo mostrado actuamente (`all` o `procastinated`).
 
-**Tarea 4: Publicar la propiedad `show` en la `<task-list>`**
+**Tarea 5: Publicar la propiedad `show` en la `<task-list>`**
 
 > **Tip:** Es lo mismo que hicimos cuando publicamos la propiedad `procastinated`.
 
@@ -82,6 +84,8 @@ Luego, desde nuestro `home-page.html` vamos a asignar el valor de `show` en la `
 > **Nota:** Para esto, podriamos usar data binding pero vamos a usar eventos para aprender algo nuevo.
 
 Cada component creado con Polymer tiene muchos [lifecycle events](https://www.polymer-project.org/docs/polymer/polymer.html#lifecyclemethods). Desde el momento en que un WebComponent es creado hasta el momento en que es removido del DOM, podemos hookearnos a cualquier lifecycle event para agregar comportamiento. En nuestro caso, una vez que nuestro WebComponent ya se encuentra preparado, vamos a escuchar al evento `core-select` del `<paper-tabs>`, el cual es emitido cada vez que cambia el tab seleccionado. En el handler del event, vamos a asignar la property `show` de la lista al nombre del tab seleccionado:
+
+**Tarea 6: Agregar entonces el siguiente codigo en la `home-page.html` para poder escuchar el evento del cambio de tab**
 
 ````js
 <!-- home-page.html -->
@@ -105,7 +109,7 @@ Luego, en el `<task-list>` debemos ocultar aquellas tareas que no fueron procast
 
 Para eso, vamos a usar la propiedad [`hidden?`](https://www.polymer-project.org/docs/polymer/layout-attrs.html#general-purpose-attributes) que nos provee Polymer. El atributo `hidden?` nos permite asignar `display: none` a un elemento basado en una condicion booleana.
 
-**Tarea 5: Completar la expresion de `hidden` basandonos en lo que vale la variable `show` y `task.procastinated`**
+**Tarea 7: Completar la expresion de `hidden` basandonos en lo que vale la variable `show` y `task.procastinated`**
 
 ````html
 <template repeat="{{task in tasks}}">

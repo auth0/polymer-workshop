@@ -8,6 +8,8 @@ La idea es tener 2 tabs. Uno con todas las tareas a realizar y otro con las tare
 
 Para empezar con la guia, [por favor hacer click aca](guide/1-start.md)
 
+Para ver la aplicacion completa funcionando, [por favor hacer click aca](http://auth0.github.io/polymer-workshop/finished/#/home)
+
 ![imagen](https://cloudup.com/cj2OstSLTIc+)
 
 
