@@ -17,6 +17,8 @@ Lo primero que vamos a hacer es importar y usar el servicio en nuestra `<task-li
 
 Con el `{{}}` estamos creando un DataBinding entre la lista de tareas devueltas por el servicio y una variable de instancia de nuestro WebComponent. Esto quiere decir que ni bien lleguen las listas de tareas del servidor, nosotros vamos a poder acceder a las tareas via `this.allTasks` desde la `<task-list>`.
 
+> Si van al `task-service` van a ver que se crea un array de `tasks`. Lo que estamos haciendo al instanciar el template es crear una variable `allTasks` y asignarle el valor del array de `tasks`. Para generalizarlo: `variable-del-service={{variable-para-binding}}`
+
 ## Creando el listado de tareas
 
 Ahora que ya obtenemos las tareas del servicio, lo que nos resta hacer es iterar sobre las mismas y mostrarlas. 
