@@ -2,7 +2,7 @@
 
 Ya tenemos nuestra `<task-card>` para mostrar la informacion de una tarea creada. Lo que vamos a hacer ahora es obtener una lista de tareas desde un servicio web y luego usar one way data binding para mostrarlas, en otras palabras rendering (en el siguiente ejercicio haremos two-way databinding).
 
-Para eso, nosotros ya hemos creado un servicio llamado `<task-service>`. Este servicio se conecta a una API fake para hacer el request de todas las tareas a realizar. Vamos a usar este servicio desde el element `<task-list>` el cual se encargara de mostrar la lista de tareas.
+El servicio ya esta creado de antemano y se llama `<task-service>` (lo pueden encontrar en `/task-service/task-service.html`). Este servicio se conecta a una API fake para hacer el request de todas las tareas a realizar. Vamos a usar este servicio desde el element `<task-list>` el cual se encargara de mostrar la lista de tareas.
 
 ## Agregando el servicio
 
