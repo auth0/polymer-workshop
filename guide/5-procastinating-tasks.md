@@ -85,7 +85,7 @@ Luego, desde nuestro `home-page.html` vamos a asignar el valor de `show` en la `
 
 Cada component creado con Polymer tiene muchos [lifecycle events](https://www.polymer-project.org/docs/polymer/polymer.html#lifecyclemethods). Desde el momento en que un WebComponent es creado hasta el momento en que es removido del DOM, podemos hookearnos a cualquier lifecycle event para agregar comportamiento. En nuestro caso, una vez que nuestro WebComponent ya se encuentra preparado, vamos a escuchar al evento `core-select` del `<paper-tabs>`, el cual es emitido cada vez que cambia el tab seleccionado. En el handler del event, vamos a asignar la property `show` de la lista al nombre del tab seleccionado:
 
-**Tarea 6: Agregar entonces el siguiente codigo en la `home-page.html` para poder escuchar el evento del cambio de tab**
+### Tarea 6: Agregar entonces el siguiente codigo en la `home-page.html` para poder escuchar el evento del cambio de tab
 
 ````js
 <!-- home-page.html -->
@@ -109,7 +109,7 @@ Luego, en el `<task-list>` debemos ocultar aquellas tareas que no fueron procast
 
 Para eso, vamos a usar la propiedad [`hidden?`](https://www.polymer-project.org/docs/polymer/layout-attrs.html#general-purpose-attributes) que nos provee Polymer. El atributo `hidden?` nos permite asignar `display: none` a un elemento basado en una condicion booleana.
 
-**Tarea 7: Completar la expresion de `hidden` basandonos en lo que vale la variable `show` y `task.procastinated`**
+### Tarea 7: Completar la expresion de `hidden` basandonos en lo que vale la variable `show` y `task.procastinated`
 
 > **Hint**. Podes hacer cosas asi `a == 'foo' && somethingelse` dentro de una expresion.
 
@@ -133,6 +133,14 @@ Ahora si vamos al tab Procastinated, deberia verse asi:
 Con esto damos por terminado el Workshop guiado. En este Workshop creamos varios WebComponents diferentes y los hicimos interactuar entre si.
 
 Ante cualquier duda que tengan cuando empiecen a jugar mas con Polymer, pueden mandar un email a [gonto@auth0.com](mailto:gonto@auth0.com) o a [cristian@auth0.com](mailto:cristian@auth0.com).
+
+## Quiero mi remera!
+
+### Tarea 8: Para ganar tu remera de Auth0 tenes que twittear algo similar a lo siguiente:
+
+````
+Polymer workshop with @mgonto and @cristandouce from @auth0 was [disastrous|nice|good|awesome|outstanding] #jsconfar
+````
 
 ## Extra Extra
 
