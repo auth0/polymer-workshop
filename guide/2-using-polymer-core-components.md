@@ -23,7 +23,7 @@ Dentro de la carpeta `starter`, si vamos al archivo `index.html` veremos algo co
   <link rel="import" href="../components/font-roboto/roboto.html">
 <!-- ... -->
 </head>
-<body unresolved>
+<body unresolved fullbleed>
   <app-router>
     <app-route path="/home" import="./home-page.html"></app-route>
 <!-- ... -->
@@ -33,7 +33,7 @@ Aqui, estamos primero importando `webcomponent.js`, el cual es el polyfill que p
 
 Luego, estamos incluyendo nuestros primeros 2 WebComponents. El primero sera el Router que usaremos en la aplicacion. El segundo nos importa la Google Web Font `Roboto`.
 
-Vemos que el body tiene el atributo [`unresolved`](https://www.polymer-project.org/articles/styling-elements.html#preventing-fouc). Este atributo hace que el body solo se muestre cuando los WebComponents fueron cargados exitosamente. Si no lo incluyeramos, se veria contenido extraño mientras carga la pagina.
+Vemos que el body tiene el atributo [`unresolved`](https://www.polymer-project.org/articles/styling-elements.html#preventing-fouc). Este atributo hace que el body solo se muestre cuando los WebComponents fueron cargados exitosamente. Si no lo incluyeramos, se veria contenido extraño mientras carga la pagina. A su vez tiene el atributo `fullbleed` el cual le dice al body que use el maximo height disponible.
 
 Por ultimo, vemos que estamos usando `<app-router>`, el WebComponent que importamos mas arriba. En este caso, estamos creando la ruta `/home` que apunta a `home-page.html`, el cual va a ser el archivo que vamos a modificar en esta primera parte.
 
@@ -60,7 +60,7 @@ Abramos ahora el archivo `home-page.html`:
 
 Este componente representa a la pagina Home. Vamos a estar utilizando `<core-header-panel>`, `<core-toolbar>` y `<paper-tabs>` para realizar el Layout de esta pagina.
 
-**Tarea: Incluir estos WebComponents que vamos a utilizar**. 
+**Tarea 1: Incluir estos WebComponents que vamos a utilizar**. 
 
 > **Tip:** Estos WebComponent se importan de la misma forma que Polymer y se los puede encontrar en la carpeta `components`. El nombre del archivo a importar es por standard siempre el mismo que el del WebComponent. Por ejemplo `<link rel="import" href="../components/some-component/some-component.html">`
 
@@ -70,13 +70,13 @@ Este componente representa a la pagina Home. Vamos a estar utilizando `<core-hea
 
 Ahora que ya tenemos importados los elementos que vamos a usar es hora de hacer el layout.
 
-**Tarea: Crear primero un `<core-header-panel>`. Adentro de este vamos a crear un `<core-toolbar>` y un `<div class="container">`**
+**Tarea 2: Crear primero un `<core-header-panel>`. Adentro de este vamos a crear un `<core-toolbar>` y un `<div class="container">`**
 
 > **Tip:** Vimos como hacer un layout similar en [estos slides](https://docs.google.com/a/gon.to/presentation/d/1Xyr5LotQUDT9O8sH7Eau5-7SGXwMvys8FR0BjrI8oqo/edit#slide=id.g3a1d4647c_2_554)
 
 Para que el `<core-header-panel>` sea visible en el layout es necesario asignarle un height especifico. Una forma facil de hacer esto es mediante los [layout attributes](https://www.polymer-project.org/docs/polymer/layout-attrs.html), los cuales se basan en [Flexbox](http://css-tricks.com/snippets/css/a-guide-to-flexbox/).
 
-**Tarea: Al `<template>` tag le tenemos que especificar que queremos un layout vertical que ocupe todo el viewport. Luego, al `<core-header-panel>` le tenemos que asignar que va a controlar su propio tamaño usando Flexbox**
+**Tarea 3: Al `<template>` tag le tenemos que especificar que queremos un layout vertical que ocupe todo el viewport. Luego, al `<core-header-panel>` le tenemos que asignar que va a controlar su propio tamaño usando Flexbox**
 
 > **Tip:** Prestar especial atencion a las propiedades `layout`, `horizontal`, `vertical` y `flex`.
 
