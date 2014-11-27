@@ -9,17 +9,9 @@ Ya podemos ver el listado de tareas. No obstante, aun hay 2 cosas que debemos ca
 
 Lo primero que vamos a hacer es agregar en la `<task-card>` un toggle que permita Procastinar una tarea. 
 
-Para esto, necesitamos poder decirle a la `<task-card>` si la tarea esta procastinada o no y necesitamos poder cambiar el estado de procastinacion de la tarea desde la `<task-card>`. En otras palabras, lo que necesitamos es crear  _2 way data binding_ entre la `<task-card>` y `task.procastinated`. Para eso, vamos a usar [published properties](https://www.polymer-project.org/docs/polymer/polymer.html#published-properties).
+Para eso, vamos a usar `<paper-toggle-button>`.
 
-**Tarea: Publicar la propiedad `procastinated` desde `<task-card>`**
-
-> **Tip:** Podemos ver como publicar propiedades en [este articulo](https://www.polymer-project.org/docs/polymer/polymer.html#published-properties). Hay 2 formas diferentes. Podemos usar cualquiera de las 2!
-
-Una vez publicada la propiedad, podremos acceder a la misma desde el JS via `this.procastinated` o desde el HTML via `{{procastinated}}`.
-
-Ahora ya podemos agregar el `<paper-toggle-button>` que cambiara el valor de `task.procastinated` cuando es clickeado.
-
-**Tarea: Insertar el toggle donde se especifica a continuacion y bindear el atributo `checked` del toggle a la propiedad `procastinated` que nuestro WebComponent esta recibiendo por parametro.**
+**Tarea 1: Insertar el toggle donde se especifica a continuacion**
 
 ````html
 <div class="card-header">
@@ -28,7 +20,6 @@ Ahora ya podemos agregar el `<paper-toggle-button>` que cambiara el valor de `ta
 <!-- Insertar toggle aqui -->
 <content></content>
 ````
-
 > **Tip:** La documentacion sobre como usar el `<paper-toggle-button>` se puede encontrar [aqui](https://www.polymer-project.org/docs/elements/paper-elements.html#paper-toggle-button)
 
 Ahora que ya esta implementado, agreguemos el siguiente CSS para que nuestro Toggle se vea mejor:
@@ -41,6 +32,24 @@ paper-toggle-button {
   color: #636363;
 }
 ````
+
+Ya deberiamos ver el Toggle en nuestra pagina ahora:
+
+![with toggle](https://cloudup.com/c4rqhjg4efP+)
+
+Sin embargo, al cambiar el toggle nada cambia. Necesitamos que cuando se cambie el toggle, cambie el valor de `procastinated` de la tarea. A su vez, el Toggle deberia empezar en ON si una tarea esta `procastinated`. Para esto, necesitamos poder decirle a la `<task-card>` si la tarea esta procastinada o no y necesitamos poder cambiar el estado de procastinacion de la tarea desde la `<task-card>`. En otras palabras, lo que necesitamos es crear  _2 way data binding_ entre la `<task-card>` y `task.procastinated`. Para eso, vamos a usar [published properties](https://www.polymer-project.org/docs/polymer/polymer.html#published-properties).
+
+**Tarea 2: Publicar la propiedad `procastinated` desde `<task-card>`**
+
+> **Tip:** Podemos ver como publicar propiedades en [este articulo](https://www.polymer-project.org/docs/polymer/polymer.html#published-properties). Hay 2 formas diferentes. Podemos usar cualquiera de las 2!
+
+Una vez publicada la propiedad, podremos acceder a la misma desde el JS via `this.procastinated` o desde el HTML via `{{procastinated}}`.
+
+Ahora debemos bindear el estado del toggle con la propiedad `procastinated` que estamos recibiendo.
+
+**Tarea 3: Bindear el atributo `checked` del toggle a la propiedad `procastinated` que nuestro WebComponent esta recibiendo por parametro.**
+
+> **Tip:** La documentacion sobre como usar la property `checked` del `<paper-toggle-button>` se puede encontrar [aqui](https://www.polymer-project.org/docs/elements/paper-elements.html#paper-toggle-button)
 
 Por ultimo, debemos pasar la propiedad `procastinated` desde la `<task-list>` hacia la `<task-card>` de la siguiente forma:
 
@@ -64,7 +73,7 @@ Ahora ya podemos procastinar tareas. Lo que nos falta es que el tab `all` muestr
 
 Para eso, lo primero que vamos a hacer es publicar la propiedad `show` en nuestro `<task-list>`. Esta propiedad sera enviada desde la `home-page.html` con el nombre del tab siendo mostrado actuamente (`all` o `procastinated`).
 
-**Tarea: Publicar la propiedad `show` en la `<task-list>`**
+**Tarea 4: Publicar la propiedad `show` en la `<task-list>`**
 
 > **Tip:** Es lo mismo que hicimos cuando publicamos la propiedad `procastinated`.
 
@@ -96,7 +105,7 @@ Luego, en el `<task-list>` debemos ocultar aquellas tareas que no fueron procast
 
 Para eso, vamos a usar la propiedad [`hidden?`](https://www.polymer-project.org/docs/polymer/layout-attrs.html#general-purpose-attributes) que nos provee Polymer. El atributo `hidden?` nos permite asignar `display: none` a un elemento basado en una condicion booleana.
 
-**Tarea: Completar la expresion de `hidden` basandonos en lo que vale la variable `show` y `task.procastinated`**
+**Tarea 5: Completar la expresion de `hidden` basandonos en lo que vale la variable `show` y `task.procastinated`**
 
 ````html
 <template repeat="{{task in tasks}}">
