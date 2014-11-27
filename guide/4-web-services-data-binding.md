@@ -8,7 +8,7 @@ El servicio ya esta creado de antemano y se llama `<task-service>` (lo pueden en
 
 Lo primero que vamos a hacer es importar y usar el servicio en nuestra `<task-list>`.
 
-**Tarea 1: Hacer un import al `<task-service>` y luego usarlo de la siguiente manera:**
+### Tarea 1: Hacer un import al `<task-service>` y luego usarlo de la siguiente manera:
 
 ````html
 <task-service id="service" tasks="{{allTasks}}"></task-service>
@@ -23,9 +23,9 @@ Con el `{{}}` estamos creando un DataBinding entre la lista de tareas devueltas 
 
 El `<task-list>` lo vamos a estar mostrando en nuestro `home-page.html`. Entonces, las tareas a realizar son las siguientes:
 
-**Tarea 2: Importar el `<task-list>` en nuestro home**
+### Tarea 2: Importar el `<task-list>` en nuestro home
 
-**Tarea 3: Usarlo dentro del `<div class="container">`. Pongamosle de `id` `list` al `<task-list>`**
+### Tarea 3: Usarlo dentro del `<div class="container">`. Pongamosle de `id` `list` al `<task-list>`
 
 > **Tip:** Para ver que se haya importado el `<task-list>` correctamente, pueden poner en el contenido de la `<task-list>` un `<p>Hola</p>` y luego chequear que se haya mostrado en el home.
 
@@ -33,7 +33,7 @@ El `<task-list>` lo vamos a estar mostrando en nuestro `home-page.html`. Entonce
 
 Ahora que ya obtenemos las tareas del servicio, lo que nos resta hacer es iterar sobre las mismas y mostrarlas en nuestro `<task-list>`.
 
-**Tarea 2: Mostrar por cada tarea una `<task-card>` con la informacion de su nombre y descripcion. Las propiedas a mostrar de la task son `task.name` y `task.description`. Usar el siguiente template como referencia:**
+### Tarea 4: Mostrar por cada tarea una `<task-card>` con la informacion de su nombre y descripcion. Las propiedas a mostrar de la task son `task.name` y `task.description`. Usar el siguiente template como referencia:
 
 ````html
 <div layout vertical center>

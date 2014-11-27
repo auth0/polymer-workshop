@@ -60,7 +60,7 @@ Abramos ahora el archivo `home-page.html`:
 
 Este componente representa a la pagina Home. Vamos a estar utilizando `<core-header-panel>`, `<core-toolbar>` y `<paper-tabs>` para realizar el Layout de esta pagina.
 
-**Tarea 1: Incluir estos WebComponents que vamos a utilizar**. 
+#### Tarea 1: Incluir estos WebComponents que vamos a utilizar.
 
 > **Tip:** Estos WebComponent se importan de la misma forma que Polymer y se los puede encontrar en la carpeta `components`. El nombre del archivo a importar es por standard siempre el mismo que el del WebComponent. Por ejemplo `<link rel="import" href="../components/some-component/some-component.html">`
 
@@ -70,7 +70,7 @@ Este componente representa a la pagina Home. Vamos a estar utilizando `<core-hea
 
 Ahora que ya tenemos importados los elementos que vamos a usar es hora de hacer el layout.
 
-**Tarea 2: Crear primero un `<core-header-panel>`. Adentro de este vamos a crear un `<core-toolbar>` y un `<div class="container">`**
+#### Tarea 2: Crear primero un `<core-header-panel>`. Adentro de este vamos a crear un `<core-toolbar>` y un `<div class="container">`
 
 > **Tip:** Vimos como hacer un layout similar en [estos slides](https://docs.google.com/a/gon.to/presentation/d/1Xyr5LotQUDT9O8sH7Eau5-7SGXwMvys8FR0BjrI8oqo/edit#slide=id.g3a1d4647c_2_554)
 
@@ -84,7 +84,7 @@ Ya tenemos ahora nuestro Layout principal finalizado. Lo que vamos a hacer ahora
 
 Para eso, vamos a usar los [`<paper-tabs>`](https://www.polymer-project.org/docs/elements/paper-elements.html#paper-tabs), los cuales heredan de [`<core-selector>`](https://www.polymer-project.org/docs/elements/core-elements.html#core-selector). 
 
-**Tarea 3: Crear 2 tabs. El primero deberia decir `all` y el otro `procastinated`**. 
+#### Tarea 3: Crear 2 tabs. El primero deberia decir `all` y el otro `procastinated`.
 
 > **Tip1:** La implementacion es similar a la de la [documentacion de `<paper-tabs>`](https://www.polymer-project.org/docs/elements/paper-elements.html#paper-tabs)
 
@@ -103,7 +103,7 @@ El resultado final deberia verse asi:
 
 Como vemos en la imagen, los tabs no se expanden al width total de la toolbar y la barrita amarilla no esta alineada con el borde final del container. Vamos a arreglar eso!
 
-**Tarea 4: Indicar en `<paper-tabs>` que este elemento va a controlar su propio espacio y se va a expandir a todo el espacio provisto por el padre usando Flexbox. A su vez, tambien debemos indicar que se va a alinear al final del container.**
+#### Tarea 4: Indicar en `<paper-tabs>` que este elemento va a controlar su propio espacio y se va a expandir a todo el espacio provisto por el padre usando Flexbox. A su vez, tambien debemos indicar que se va a alinear al final del container.
 
 > **Tip:** Ambas properties a usar se encuentra en la documentacion de [layout](https://www.polymer-project.org/docs/polymer/layout-attrs.html). Prestar especial atencion a `self-end` y `flex`.
 
