@@ -132,15 +132,17 @@ Ahora si vamos al tab Procastinated, deberia verse asi:
 
 Con esto damos por terminado el Workshop guiado. En este Workshop creamos varios WebComponents diferentes y los hicimos interactuar entre si.
 
-Ante cualquier duda que tengan cuando empiecen a jugar mas con Polymer, pueden mandar un email a [gonto@auth0.com](mailto:gonto@auth0.com) o a [cristian@auth0.com](mailto:cristian@auth0.com).
+Ante cualquier duda que tengan cuando empiecen a jugar mas con Polymer, pueden hacer preguntas en StackOverflow (tag: polymer) o pueden mandar un email a [gonto@auth0.com](mailto:gonto@auth0.com) o a [cristian@auth0.com](mailto:cristian@auth0.com).
 
 ## Quiero mi remera!
 
 #### Tarea 8: Para ganar tu remera de Auth0 tenes que twittear algo similar a lo siguiente:
 
-````
+```
 Polymer workshop with @mgonto and @cristandouce from @auth0 was [disastrous|really bad|meh|nice|great|awesome|outstanding] #jsconfar -> https://github.com/auth0/polymer-workshop
-````
+```
+
+<img src="https://cloudup.com/cY9IydCqcM2+">
 
 ## Extra Extra
 
