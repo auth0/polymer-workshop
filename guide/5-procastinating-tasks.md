@@ -139,7 +139,7 @@ Ante cualquier duda que tengan cuando empiecen a jugar mas con Polymer, pueden m
 #### Tarea 8: Para ganar tu remera de Auth0 tenes que twittear algo similar a lo siguiente:
 
 ````
-Polymer workshop with @mgonto and @cristandouce from @auth0 was [disastrous|nice|good|awesome|outstanding] #jsconfar
+Polymer workshop with @mgonto and @cristandouce from @auth0 was [disastrous|really bad|meh|nice|great|awesome|outstanding] #jsconfar -> https://github.com/auth0/polymer-workshop
 ````
 
 ## Extra Extra
