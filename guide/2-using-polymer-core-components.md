@@ -33,38 +33,27 @@ Aqui, estamos primero importando `webcomponent.js`, el cual es el polyfill que p
 
 Luego, estamos incluyendo nuestros primeros 2 WebComponents. El primero sera el Router que usaremos en la aplicacion. El segundo nos importa la Google Web Font `Roboto`.
 
-Vemos que el body tiene el atributo [`unresolved`](https://www.polymer-project.org/articles/styling-elements.html#preventing-fouc). Este atributo hace que el body solo se muestre cuando los WebComponents fueron cargados exitosamente. Si no lo incluyeramos, se veria contenido extraño mientras carga la pagina. A su vez tiene el atributo `fullbleed` el cual le dice al body que use el maximo height disponible.
+El atributo [`unresolved`](https://www.polymer-project.org/articles/styling-elements.html#preventing-fouc) en el elemento body hace que el contenido no se muestre hasta que los WebComponents se hayan terminado de cargar. Si no lo incluyeramos, se veria contenido extraño mientras carga la página.
 
-Por ultimo, vemos que estamos usando `<app-router>`, el WebComponent que importamos mas arriba. En este caso, estamos creando la ruta `/home` que apunta a `home-page.html`, el cual va a ser el archivo que vamos a modificar en esta primera parte.
+Por último, vemos que estamos usando `<app-router>` del WebComponent que importamos mas arriba. En este caso, estamos definiendo una ruta `/home` que apunta a un archivo `home-page.html.
 
 ## Let's code!
 
 ### Agregando los imports
 
-Abramos ahora el archivo `home-page.html`:
-
-````html
-<link rel="import" href="../components/polymer/polymer.html">
-
-<polymer-element name="home-page">
-  <template>
-    <style>
-      ...
-    </style>
-
-  <script>
-  Polymer({});
-  </script>
-</polymer-element>
-````
-
-Este componente representa a la pagina Home. Vamos a estar utilizando `<core-header-panel>`, `<core-toolbar>` y `<paper-tabs>` para realizar el Layout de esta pagina.
+Abrir el archivo `home-page.html`.
 
 ##### Tarea 1: Incluir estos WebComponents que vamos a utilizar.
 
-> **Tip:** Estos WebComponent se importan de la misma forma que Polymer y se los puede encontrar en la carpeta `components`. El nombre del archivo a importar es por standard siempre el mismo que el del WebComponent. Por ejemplo `<link rel="import" href="../components/some-component/some-component.html">`
+Importar los archivos necesarios para utilizar los siguientes componentes:
 
-> **Nota:** Como vemos aqui, la `home-page` es un WebComponent. No obstante, explicaremos mas acerca de como crearlos en el siguiente paso. 
+-  `<core-header-panel>`
+-  `<core-toolbar>` 
+-  `<paper-tabs>` 
+
+> **Tip:** Los componentes que vamos a utilizar se encuentran en la carpeta `components`. El nombre del archivo a importar es por standard siempre el mismo que el del WebComponent. Por ejemplo `<link rel="import" href="../components/some-component/some-component.html">`
+
+> **Nota:** Como vemos aqui, la `home-page` es a su vez otro WebComponent.
 
 ### Usando los WebComponents importados
 
